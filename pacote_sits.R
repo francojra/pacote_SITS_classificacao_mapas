@@ -21,6 +21,20 @@ samples <- cerrado_2classes
 class(samples)
 View(samples)
 
+# 3. Treinar modelo SEM suavização prévia
+model <- sits_train(
+  samples = samples,
+  ml_method = sits_rfor()  # Pode usar outros métodos
+)
+
+# 4. Classificar imagem (gerar cubo de probabilidades)
+# (Substitua 'cube' pelo seu cubo de dados real)
+data("cerrado_2classes")
+probs_cube <- sits_classify(
+  data = cerrado_2classes,
+  ml_model = model
+)
+
 # 3. Pré-processamento dos dados
 # Criar série temporal suavizada
 ts_smoothed <- sits_smooth(

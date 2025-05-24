@@ -11,16 +11,12 @@
 
 3. Pré-processamento:
 
-Suavização temporal
+- Suavização temporal
+- Cálculo de índices de vegetação
 
-Cálculo de índices de vegetação
+4. Treinamento do Modelo: Usa Random Forest (pode substituir por outros como SVM, XGBoost, etc.)
 
-Treinamento do Modelo: Usa Random Forest (pode substituir por outros como SVM, XGBoost, etc.)
-
-Classificação: Aplica o modelo em todo o cubo de dados
-
-Pós-processamento: Suavização para reduzir ruídos
-
-Visualização: Gera e plota o mapa final
-
-Validação: Avaliação da precisão usando validação cruzada
+5. Classificação: Aplica o modelo em todo o cubo de dados
+6. Pós-processamento: Suavização para reduzir ruídos
+7. Visualização: Gera e plota o mapa final
+8. Validação: Avaliação da precisão usando validação cruzada

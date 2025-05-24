@@ -27,6 +27,7 @@ ts_smoothed <- sits_smooth(
   data      = samples,
   times     = 3,
   window_size = 9,
+  cube = "MOD13Q1",
   .bands    = c("NDVI", "EVI")
 )
 

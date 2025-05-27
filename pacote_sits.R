@@ -27,6 +27,31 @@ model <- sits_train(
   ml_method = sits_rfor()  # Pode usar outros métodos
 )
 
+# 4. Preparar dados raster 
+# Baixar imagens gratuitas
+
+# Configure primeiro o acesso ao BDC (se ainda não fez)
+
+library(rstac)
+# 1. Primeiro configurar a fonte STAC do BDC
+sits:::.source_add_stac(
+  name = "BDC",
+  url = "https://brazildatacube.dpi.inpe.br/stac/",
+  service_type = "STAC"
+)
+# 2. Criar cubo SITS para o BDC
+cerrado_bbox <- c(-53.0, -18.0, -45.0, -12.0)  # Exemplo Cerrado
+
+cube_cerrado <- sits_cube(
+  source = "STAC",
+  url = "https://brazildatacube.dpi.inpe.br/stac/",
+  collection = "S2-L2A_10_16D_STK-1",
+  bands = c("B04", "B08"),
+  bbox = cerrado_bbox,
+  start_date = "2023-01-01",
+  end_date = "2023-06-30"
+)
+
 # 4. Classificar imagem (gerar cubo de probabilidades)
 # (Substitua 'cube' pelo seu cubo de dados real)
 data("cerrado_2classes")
@@ -35,14 +60,13 @@ probs_cube <- sits_classify(
   ml_model = model
 )
 
-# 3. Pré-processamento dos dados
-# Criar série temporal suavizada
+class(probs_cube)
+View(probs_cube)
+
+# 3. Aplicar suavização no cubo de probabilidades
 ts_smoothed <- sits_smooth(
-  data      = samples,
-  times     = 3,
+  cube = probs_cube,
   window_size = 9,
-  cube = "MOD13Q1",
-  .bands    = c("NDVI", "EVI")
 )
 
 # Calcular índices adicionais (exemplo: NDVI)

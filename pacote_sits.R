@@ -10,7 +10,7 @@ library(raster)
 
 # 1. Definir configurações iniciais
 set.seed(1234)
-sits_config(progress = FALSE)  # Configurações do SITS
+#sits_config(progress = FALSE)  # Configurações do SITS
 
 # 2. Carregar dados de exemplo (substitua por seus próprios dados)
 # Carregar dados de treinamento
@@ -21,7 +21,7 @@ samples <- cerrado_2classes
 class(samples)
 View(samples)
 
-# 3. Treinar modelo SEM suavização prévia
+# 3. Treinar modelo 
 model <- sits_train(
   samples = samples,
   ml_method = sits_rfor()  # Pode usar outros métodos

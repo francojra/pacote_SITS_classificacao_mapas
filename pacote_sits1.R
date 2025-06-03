@@ -13,13 +13,11 @@ time_range <- c("2020-06-01", "2020-09-30")
 s2_cube <- sits_cube(
   source = "AWS",
   collection = "SENTINEL-2-L2A",
-  roi = roi,
-  bands = c("B04", "B08", "NDVI"),  # Red, NIR, NDVI
-  start_date = time_range[1],
-  end_date = time_range[2],
+  roi = roi_bbox,
+  bands = c("B04", "B08", "NDVI"),
+  start_date = "2020-06-01",
+  end_date = "2020-09-30",
   tile = "T21LYC",
-  label = NA,
-  cloud_filter = 0.1,
   progress = TRUE
 )
 

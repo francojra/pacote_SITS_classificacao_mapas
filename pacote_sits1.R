@@ -1,7 +1,3 @@
-# Carregar os pacotes necessários
-
-library(sits)
-
 # Carregando o pacote
 library(sits)
 

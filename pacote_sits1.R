@@ -9,12 +9,15 @@ roi_bbox <- st_bbox(c(xmin = -54.0, xmax = -53.5, ymin = -3.0, ymax = -2.5), crs
 # Definindo o intervalo de tempo
 time_range <- c("2020-06-01", "2020-09-30")
 
+# Verificar bandas da imagem sentinel
+sits_bands("SENTINEL-2-L2A")
+
 # Criando um cube de imagens Sentinel-2 diretamente da AWS
 s2_cube <- sits_cube(
   source = "AWS",
   collection = "SENTINEL-2-L2A",
   roi = roi_bbox,
-  bands = c("B04", "B08", "NDVI"),
+  bands = c("B04", "B08", "B06"),
   start_date = "2020-06-01",
   end_date = "2020-09-30",
   tile = "T21LYC",

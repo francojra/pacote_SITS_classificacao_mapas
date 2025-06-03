@@ -1,6 +1,7 @@
 # Carregando o pacote
 library(sits)
 library(sf)
+library(gdalcubes)
 
 # Define coordenadas (longitude e latitude) da ROI - exemplo: região amazônica
 roi_bbox <- st_bbox(c(xmin = -54.0, xmax = -53.5, ymin = -3.0, ymax = -2.5), crs = st_crs(4326)) %>%
@@ -28,17 +29,29 @@ s2_cube <- sits_cube(
 print(s2_cube)
 View(s2_cube)
 
-# Criar amostras (para treinamento)
-# Você pode ter um arquivo .csv com coordenadas e rótulos, mas aqui criamos aleatoriamente (exemplo educativo)
-samples <- sits_select(
-  data = s2_cube,
-  samples = 100,
-  labels = c("Forest", "Non-Forest")
+# Regularizando o cube (etapa obrigatória)
+s2_cube <- sits_regularize(
+  cube = s2_cube,
+  period = "P16D",
+  res = 10,
+  snap = "near",
+  output_dir = "regularized_cube"  # pasta onde arquivos regulares serão salvos
 )
 
-View(samples)
+# Criar amostras (para treinamento)
+# Você pode ter um arquivo .csv com coordenadas e rótulos, mas aqui criamos aleatoriamente (exemplo educativo)
+samples_tbl <- tibble::tibble(
+  longitude = c(-53.8, -53.7),
+  latitude = c(-2.9, -2.7),
+  start_date = "2020-06-01",
+  end_date = "2020-09-30",
+  label = c("Forest", "Non-Forest")
+)
 
-# Treinar um modelo de classificação (Random Forest)
+# Criar amostras com os dados do cube
+samples <- sits_get_data(cube = s2_cube, samples = samples_tbl)
+
+# Treinar modelo
 model <- sits_train(samples, ml_method = sits_rfor())
 
 # Classificação da área

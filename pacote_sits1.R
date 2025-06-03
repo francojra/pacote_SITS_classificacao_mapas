@@ -26,6 +26,7 @@ s2_cube <- sits_cube(
 
 # Mostrando os metadados do cube
 print(s2_cube)
+View(s2_cube)
 
 # Criar amostras (para treinamento)
 # Você pode ter um arquivo .csv com coordenadas e rótulos, mas aqui criamos aleatoriamente (exemplo educativo)
@@ -34,6 +35,8 @@ samples <- sits_select(
   samples = 100,
   labels = c("Forest", "Non-Forest")
 )
+
+View(samples)
 
 # Treinar um modelo de classificação (Random Forest)
 model <- sits_train(samples, ml_method = sits_rfor())

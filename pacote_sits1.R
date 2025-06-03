@@ -1,11 +1,10 @@
 # Carregando o pacote
 library(sits)
+library(sf)
 
-# Definindo uma região de interesse (bbox) - exemplo: parte da Amazônia
-roi <- tibble::tibble(
-  longitude = c(-54.0, -53.5),
-  latitude = c(-3.0, -2.5)
-)
+# Define coordenadas (longitude e latitude) da ROI - exemplo: região amazônica
+roi_bbox <- st_bbox(c(xmin = -54.0, xmax = -53.5, ymin = -3.0, ymax = -2.5), crs = st_crs(4326)) %>%
+  st_as_sfc()
 
 # Definindo o intervalo de tempo
 time_range <- c("2020-06-01", "2020-09-30")

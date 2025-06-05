@@ -6,6 +6,12 @@ devtools::install_github("e-sensing/sitsdata")
 # usethis::create_github_token()
 # gitcreds::gitcreds_set()
 
-library(RStoolbox)
 library(sits)
 library(sitsdata)
+
+# Principais funções dos pacotes -----------------------------------------------------------------------------------------------------------
+
+# 1 - sits_cube()
+# 2 - sits_regularize()
+# 3 - sits_apply()
+# 4 - sits_get_data()

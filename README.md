@@ -9,6 +9,6 @@ Imageamento de satélite promove o mais extensivo dado sobre nosso ambiente. Ao 
 
 ### Tempo primeiro, espaço depois
 
-
+“Time-first, space-later” é um conceito de classificação de imagem de satélite que toma análises de séries temporais como primeiro passo para analisar dados de sensoriamento remoto, com informação espacial sendo considerada após todas as séries de tempo serem classificadas. O tempo primeiro traz um melhor entendimento das mudanças nas paisagens.
 
 

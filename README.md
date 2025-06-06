@@ -5,6 +5,6 @@
 
 ### Por que trabalhar com séries temporais de imagens de satélite?
 
-Imageamento de satélite promove o mais extensivo dado sobre nosso ambiente. Ao abranger várias áreas da superfície da terra, as imagens permitem aos pesquisadores analisar transformações locais e globais.
+Imageamento de satélite promove o mais extensivo dado sobre nosso ambiente. Ao abranger várias áreas da superfície da terra, as imagens permitem aos pesquisadores analisar transformações locais e globais. Ao observar o mesmo local em diferentes tempos, os satélites fornecem dados sobre mudanças ambientais e pesquisar áreas que são difíceis de observar do solo.
 
 

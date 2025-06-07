@@ -1,4 +1,4 @@
-# Pacote SITS - Classificação de uso e cobertura do solo
+# Pacote SITS - Classificação de uso e Cobertura do Solo e Séries Temporais
 
 #### Autoria do script: Jeanne Franco
 #### Data: 23/05/25

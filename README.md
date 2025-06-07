@@ -22,7 +22,7 @@ Uma das vantagens de usar imagens de séries temporais para classificação da t
 
 ### Como o *sits* trabalha
 
-O pacote *sits* usa imagens de séries temporais para classificação da terra usando a abordagem *time-first, space-later*. A parte de preparação de dados, coleções de imagens *big Earth observation* são organizadas como cubos de dados. Cada localização espacial do cubo de dados é associada a uma série temporal. Localizações com conhecidos rótulos treina um algoritmo de machine learning, que classifica todas as séries temporais de um cubo de dados, como mostrado na figura abaixo:
+O pacote *sits* usa imagens de séries temporais para classificação da terra usando a abordagem *time-first, space-later*. A parte de preparação de dados, coleções de imagens *Big Earth Observation* são organizadas como cubos de dados. Cada localização espacial do cubo de dados é associada a uma série temporal. Localizações com conhecidos rótulos treina um algoritmo de machine learning, que classifica todas as séries temporais de um cubo de dados, como mostrado na figura abaixo:
 
 ![Usando séries temporais para classificação da terra (fonte: autores).](https://e-sensing.github.io/sitsbook/images/sits_general_view.png)
 

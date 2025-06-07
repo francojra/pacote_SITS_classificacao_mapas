@@ -1,8 +1,8 @@
 # Pacote SITS - Séries Temporais e Classificação de uso e Cobertura do Solo 
 
 #### Autoria do script: Jeanne Franco
-#### Referência: https://e-sensing.github.io/sitsbook/introduction.html
 #### Data: 23/05/25
+#### Referência: https://e-sensing.github.io/sitsbook/introduction.html
 
 ## Conceitos
 

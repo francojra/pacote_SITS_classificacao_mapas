@@ -3,6 +3,8 @@
 #### Autoria do script: Jeanne Franco
 #### Data: 23/05/25
 
+## Conceitos
+
 ### Por que trabalhar com séries temporais de imagens de satélite?
 
 Imageamento de satélite promove o mais extensivo dado sobre nosso ambiente. Ao abranger várias áreas da superfície da terra, as imagens permitem aos pesquisadores analisar transformações locais e globais. Ao observar o mesmo local em diferentes tempos, os satélites fornecem dados sobre mudanças ambientais e pesquisar áreas que são difíceis de observar do solo. Dado características únicas delas, as imagens oferecem essenciais informações para muitas aplicações, incluindo desmatamento, produção agrícola, segurança alimentar, áreas urbanas, escassez de água e degradação da terra. Usando séries temporais, especialistas melhoram o entendimento deles sobre processos e padrões ecológicos. Em vez de selecionar imagens individuais de datas específicas e compará-las, os pesquisadores rastreiam as mudanças continuamente.
@@ -13,6 +15,6 @@ Imageamento de satélite promove o mais extensivo dado sobre nosso ambiente. Ao 
 
 ### Cobertura e uso da terra
 
-A Food and Agriculture Organization define cobertura da terra como "a cobertura biofísica observada sobre a superfície da terra". A cobertura da terra pode ser observada e mapeada diretamente através de imagens de sensoriamento remoto. Nas diretrizes e relatórios da FAO, uso da terra é descrita como "as atividades ou propósitos humanos para os quais a terra é gerida ou explorada.
+A Food and Agriculture Organization define cobertura da terra como "a cobertura biofísica observada sobre a superfície da terra". A cobertura da terra pode ser observada e mapeada diretamente através de imagens de sensoriamento remoto. Nas diretrizes e relatórios da FAO, uso da terra é descrita como "as atividades ou propósitos humanos para os quais a terra é gerida ou explorada". Apesar do "*uso da terra*" e "*cobertura da terra*" denotar diferentes abordagens para descrever a paisagem da terra, na prática existe considerável sobreposição entre esses conceitos.
 
 

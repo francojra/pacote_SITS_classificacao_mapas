@@ -20,6 +20,9 @@ A Food and Agriculture Organization define cobertura da terra como "a cobertura 
 
 Uma das vantagens de usar imagens de séries temporais para classificação da terra é a capacidade delas de medir mudanças na paisagem relacionadas a práticas de agricultura. Por exemplo, séries temporais de um índice de vegetação em uma área de produção agrícola mostrará um padrão de mínimos (estágios de plantio e semeadura) e máximos (estágio de floração). Assim, esquemas de classificação sobre imagens de dados de séries temporais pode ser mais rico e mais detalhado que aqueles associados apenas com cobertura da terra. A seguir, nós usamos o termo classificação da terra (*land classification*) para se referir a classificação da imagem representando ambos cobertura da terra e classes de uso da terra.
 
-### Comno o *sits* trabalha
+### Como o *sits* trabalha
 
 O pacote *sits* usa imagens de séries temporais para classificação da terra usando a abordagem *time-first, space-later*. A parte de preparação de dados, coleções de imagens * big Earth observation* são organizadas como cubos de dados. Cada localização espacial do cubo de dados é associada a uma série temporal. Localizações com conhecidos rótulos treina um algoritmo de machine learning, que classifica todas as séries temporais de um cubo de dados. 
+
+![Figure 1: Using time series for land classification (source: authors).]([image-url](https://e-sensing.github.io/sitsbook/images/sits_general_view.png))
+

@@ -37,4 +37,4 @@ O pacote fornece ferramentas para análises, visualização e classificação de
 7. Classificar os cubos de dados usando o modelo para obter as classes de probabilidades para cada pixel.
 8. Pós-processar o cubo de probabilidade para remover outliers.
 9. Produzir um mapa rotulado do cubo de probabilidade pós-processado.
-10. 
+10. Avaliar a acurácia da classificação usando as melhores práticas.

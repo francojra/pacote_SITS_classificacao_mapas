@@ -28,15 +28,17 @@ O pacote *sits* usa imagens de séries temporais para classificação da terra u
 
 O pacote fornece ferramentas para análises, visualização e classificação de imagens de satélite de séries temporais. Usuários seguem um típico fluxo de trabalho para uma classificação baseada em pixel:
 
-1. Selecionar um dado de coletação de imagem pronta para análise (ARD image collections) de provedores de nuvem como AWS, Microsoft Planetary Computer, Digital Earth Africa, Brazil Data Cube, etc.
-2. Construir um cubo de dados regular usando a coleção de imagem escolhida.
-3. Obter novas bandas e índices com operações sobre o cubo de dados.
-4. Extrair amostras de séries temporais do cubo de dados para ser usado como dados de treinamento.
-5. Executar o controle de qualidade e a filtragem nas amostras de séries temporais.
-6. Treinar o modelo de machine learning usando as amostras de séries temporais.
-7. Classificar os cubos de dados usando o modelo para obter as classes de probabilidades para cada pixel.
-8. Pós-processar o cubo de probabilidade para remover outliers.
-9. Produzir um mapa rotulado do cubo de probabilidade pós-processado.
-10. Avaliar a acurácia da classificação usando as melhores práticas.
+1. Selecionar um dado de coletação de imagem pronta para análise (ARD image collections) de provedores de nuvem como AWS, Microsoft Planetary Computer, Digital Earth Africa, Brazil Data Cube, etc. --> sits_cube()
+2. Construir um cubo de dados regular usando a coleção de imagem escolhida. --> sits_regularize()
+3. Obter novas bandas e índices com operações sobre o cubo de dados. --> sits_apply()
+4. Extrair amostras de séries temporais do cubo de dados para ser usado como dados de treinamento. --> sits_get_data()
+5. Executar o controle de qualidade e a filtragem nas amostras de séries temporais. 
+6. Treinar o modelo de machine learning usando as amostras de séries temporais. --> sits_train()
+7. Classificar os cubos de dados usando o modelo para obter as classes de probabilidades para cada pixel. --> sits_classify()
+8. Pós-processar o cubo de probabilidade para remover outliers. --> sits_smooth()
+9. Produzir um mapa rotulado do cubo de probabilidade pós-processado. --> sits_label_classification()
+10. Avaliar a acurácia da classificação usando as melhores práticas. --> sits_accuracy()
 
-Cada etapa do fluxo de trabalho corresponde a uma função do sits API, como mostrado na tabela e figura abaixo. Essas funções tem parâmetros e comportamentos padrões convenientes. Uma simples função constroi modelos de machine learning. A função de classificação processa cubos de big data com processamento paralelo eficiente. Como a API SITs é simples de aprender, alcançar bons resultados não exige conhecimento profundo sobre aprendizado de máquina e processamento paralelo.
+Cada etapa do fluxo de trabalho corresponde a uma função do sits API, como mostrado na figura abaixo. Essas funções tem parâmetros e comportamentos padrões convenientes. Uma simples função constroi modelos de machine learning. A função de classificação processa cubos de big data com processamento paralelo eficiente. Como a API SITs é simples de aprender, alcançar bons resultados não exige conhecimento profundo sobre aprendizado de máquina e processamento paralelo.
+
+![Principais funções do sits API (fonte: autores).](https://e-sensing.github.io/sitsbook/images/sits_api.png)

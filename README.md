@@ -26,4 +26,9 @@ O pacote *sits* usa imagens de séries temporais para classificação da terra u
 
 ![Usando séries temporais para classificação da terra (fonte: autores).](https://e-sensing.github.io/sitsbook/images/sits_general_view.png)
 
-O pacote fornece ferramentas para análises, visualização e classificação de imagens de satélite de séries temporais. Usuários seguem um típico fluxo de trabalho para uma classificação baseada em pixel.
+O pacote fornece ferramentas para análises, visualização e classificação de imagens de satélite de séries temporais. Usuários seguem um típico fluxo de trabalho para uma classificação baseada em pixel:
+
+1. Selecionar um dado de coletação de imagem pronta para análise (ARD image collections) de provedores de nuvem como AWS, Microsoft Planetary Computer, Digital Earth Africa, Brazil Data Cube, etc.
+2. Construir um cubo de dados regular usando a coleção de imagem escolhida.
+3. Obter novas bandas e índices com operações sobre o cubo de dados.
+4. Extrair amostras de séries temporais do cubo de dados para ser usado como dados de treinamento.

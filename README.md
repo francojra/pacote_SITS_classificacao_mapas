@@ -34,3 +34,7 @@ O pacote fornece ferramentas para análises, visualização e classificação de
 4. Extrair amostras de séries temporais do cubo de dados para ser usado como dados de treinamento.
 5. Executar o controle de qualidade e a filtragem nas amostras de séries temporais.
 6. Treinar o modelo de machine learning usando as amostras de séries temporais.
+7. Classificar os cubos de dados usando o modelo para obter as classes de probabilidades para cada pixel.
+8. Pós-processar o cubo de probabilidade para remover outliers.
+9. Produzir um mapa rotulado do cubo de probabilidade pós-processado.
+10. 

@@ -32,3 +32,5 @@ O pacote fornece ferramentas para análises, visualização e classificação de
 2. Construir um cubo de dados regular usando a coleção de imagem escolhida.
 3. Obter novas bandas e índices com operações sobre o cubo de dados.
 4. Extrair amostras de séries temporais do cubo de dados para ser usado como dados de treinamento.
+5. Executar o controle de qualidade e a filtragem nas amostras de séries temporais.
+6. Treinar o modelo de machine learning usando as amostras de séries temporais.

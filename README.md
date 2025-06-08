@@ -38,3 +38,5 @@ O pacote fornece ferramentas para análises, visualização e classificação de
 8. Pós-processar o cubo de probabilidade para remover outliers.
 9. Produzir um mapa rotulado do cubo de probabilidade pós-processado.
 10. Avaliar a acurácia da classificação usando as melhores práticas.
+
+Cada etapa do fluxo de trabalho corresponde a uma função do sits API, como mostrado na tabela e figura abaixo. Essas funções tem parâmetros e comportamentos padrões convenientes. Uma simples função constroi modelos de machine learning. A função de classificação processa cubos de big data com processamento paralelo eficiente. Como a API SITs é simples de aprender, alcançar bons resultados não exige conhecimento profundo sobre aprendizado de máquina e processamento paralelo.

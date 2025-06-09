@@ -24,3 +24,31 @@ sinop_cube <- sits_cube(
   data_dir = system.file("extdata/sinop", package = "sitsdata"),
   parse_info = c("satellite", "sensor", "tile", "band", "date")
 )
+
+# Plot the NDVI for the first date (2013-09-14) --------------------------------------------------------------------------------------------
+
+plot(sinop_cube,
+  band = "NDVI",
+  dates = "2013-09-14",
+  palette = "RdYlGn"
+)
+
+# The R object returned by sits_cube() contains the metadata 
+# describing the contents of the data cube. It includes data
+# source and collection, satellite, sensor, tile in the
+# collection, bounding box, projection, and list of files.
+# Each file refers to one band of an image at one of the
+# temporal instances of the cube.
+
+view(sinop_cube)
+
+# The list of image files which make up the data cube is stored 
+# as a data frame in the column file_info. For each file, sits 
+# stores information about spectral band, reference date, size, 
+# spatial resolution, coordinate reference system, bounding box,
+# path to file location and cloud cover information 
+# (when available).
+
+# Show information on the images files which are part of a data cube
+
+view(sinop_cube$file_info[[1]])

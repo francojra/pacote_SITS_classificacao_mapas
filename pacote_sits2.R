@@ -68,3 +68,47 @@ sits_timeline(sinop_cube)
 # samples and the date cube should share a timeline with the 
 # same number of intervals and similar start and end dates.
 
+# The time series tibble -------------------------------------------------------------------------------------------------------------------
+
+# To handle time series information, sits uses a tibble. 
+# Tibbles are extensions of the data.frame tabular data 
+# structures provided by the tidyverse set of packages. 
+# The example below shows a tibble with 1,837 time series 
+# obtained from MODIS MOD13Q1 images. Each series has four 
+# attributes: two bands (NIR and MIR) and two indexes 
+# (NDVI and EVI). This dataset is available in package sitsdata.
+
+# The time series tibble contains data and metadata. The first 
+# six columns contain the metadata: spatial and temporal 
+# information, the label assigned to the sample, and the data 
+# cube from where the data has been extracted. The time_series 
+# column contains the time series data for each spatiotemporal 
+# location. This data is also organized as a tibble, with a 
+# column with the dates and the other columns with the values 
+# for each spectral band.
+
+data("samples_matogrosso_mod13q1", package = "sitsdata")
+view(samples_matogrosso_mod13q1)
+
+# Load the time series for MODIS samples for Mato Grosso
+view(samples_matogrosso_mod13q1[1, ]$time_series[[1]])
+
+summary(samples_matogrosso_mod13q1)
+
+# select all samples with label "Forest"
+samples_forest <- dplyr::filter(
+  samples_matogrosso_mod13q1,
+  label == "Forest"
+)
+
+view(samples_forest)
+
+# select the NDVI band for all samples with label "Forest"
+samples_forest_ndvi <- sits_select(
+  samples_forest,
+  band = "NDVI" # Entretanto, gera gráficos de todos os índices
+)
+
+view(samples_forest_ndvi)
+
+plot(samples_forest_ndvi)

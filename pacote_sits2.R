@@ -52,3 +52,19 @@ view(sinop_cube)
 # Show information on the images files which are part of a data cube
 
 view(sinop_cube$file_info[[1]])
+
+# Show the R object that describes the data cube
+
+sits_timeline(sinop_cube)
+
+# The timeline of the sinop_cube data cube has 23 intervals 
+# with a temporal difference of 16 days. The chosen dates 
+# capture the agricultural calendar in Mato Grosso, Brazil. 
+# The agricultural year starts in September-October with the 
+# sowing of the summer crop (usually soybeans) which is 
+# harvested in February-March. Then the winter crop 
+# (mostly Corn, Cotton or Millet) is planted in March and 
+# harvested in June-July. For LULC classification, the training 
+# samples and the date cube should share a timeline with the 
+# same number of intervals and similar start and end dates.
+

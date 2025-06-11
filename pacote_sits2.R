@@ -112,3 +112,27 @@ samples_forest_ndvi <- sits_select(
 view(samples_forest_ndvi)
 
 plot(samples_forest_ndvi)
+
+# Treinando um modelo de machine learning --------------------------------------------------------------------------------------------------
+
+set.seed(03022024)
+
+# Select the bands NDVI and EVI
+
+samples_2bands <- sits_select(
+  data = samples_matogrosso_mod13q1,
+  bands = c("NDVI", "EVI")
+)
+
+view(samples_2bands)
+
+# Train a random forest model
+
+rf_model <- sits_train(
+  samples = samples_2bands,
+  ml_method = sits_rfor()
+)
+
+# Plot the most important variables of the model
+
+plot(rf_model)

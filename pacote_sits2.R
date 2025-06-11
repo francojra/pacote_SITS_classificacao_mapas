@@ -135,7 +135,16 @@ rf_model <- sits_train(
 
 # Plot the most important variables of the model
 
-install.packages("randomForestExplainer")
+# install.packages("randomForestExplainer")
 library(randomForestExplainer)
 
 plot(rf_model)
+
+# Treinar modelo de machine learning -------------------------------------------------------------------------------------------------------
+
+# Após treinar o modelo de machine learning, o próximo passo
+# é classificar o cubo de dados usando sits_classify().
+# Essa função produz um conjunto de probabilidades de mapa
+# raster, uma para cada classe. Para cada um desses mapas, o
+# valor do pixel é proporcional a probabilidade que ele pertence
+# a classe.

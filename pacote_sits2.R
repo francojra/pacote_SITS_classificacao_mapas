@@ -135,4 +135,7 @@ rf_model <- sits_train(
 
 # Plot the most important variables of the model
 
+install.packages("randomForestExplainer")
+library(randomForestExplainer)
+
 plot(rf_model)

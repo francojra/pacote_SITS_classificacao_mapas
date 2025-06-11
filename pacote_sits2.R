@@ -167,6 +167,32 @@ view(sinop_probs)
 
 plot(sinop_probs, labels = "Forest", palette = "BuGn")
 
+# Espacial smoothing -----------------------------------------------------------------------------------------------------------------------
+
+# Quando se trabalha com grandes quantidades de dados de observação
+# da terra, existe muita variabilidade em cada classe. Como resultado,
+# alguns pixels podem ser classificados incorretamente. Para resolver
+# esses problemas, sits_smooth() pega um cubo de probabilidades como input
+# e usa as classes de probabilidades de cada vizinhança do pixel para 
+# reduzir incertezas de classes. A plotagem do mapa de probabilidade suavizado
+# para a classe forest mostra que a maioria dos valores discrepantes
+# foram removidos.
+
+# Perform spatial smoothing
+
+sinop_bayes <- sits_smooth(
+  cube = sinop_probs,
+  multicores = 2,
+  memsize = 8,
+  output_dir = "arquivos_pacote_sits"
+)
+
+view(sinop_bayes)
+
+plot(sinop_bayes, labels = "Forest", palette = "BuGn")
+
+# Rotulando um cubo de dados de probabilidade ----------------------------------------------------------------------------------------------
+
 
 
 

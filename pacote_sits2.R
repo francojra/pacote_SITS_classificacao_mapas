@@ -9,9 +9,7 @@ devtools::install_github("e-sensing/sitsdata")
 
 # Baixar pacotes para análises -------------------------------------------------------------------------------------------------------------
 
-# load package "tibble"
 library(tibble)
-# load packages "sits" and "sitsdata"
 library(sits)
 library(sitsdata)
 
@@ -91,11 +89,13 @@ data("samples_matogrosso_mod13q1", package = "sitsdata")
 view(samples_matogrosso_mod13q1)
 
 # Load the time series for MODIS samples for Mato Grosso
+
 view(samples_matogrosso_mod13q1[1, ]$time_series[[1]])
 
 summary(samples_matogrosso_mod13q1)
 
 # select all samples with label "Forest"
+
 samples_forest <- dplyr::filter(
   samples_matogrosso_mod13q1,
   label == "Forest"
@@ -104,6 +104,7 @@ samples_forest <- dplyr::filter(
 view(samples_forest)
 
 # select the NDVI band for all samples with label "Forest"
+
 samples_forest_ndvi <- sits_select(
   samples_forest,
   band = "NDVI" # Entretanto, gera gráficos de todos os índices
@@ -148,3 +149,20 @@ plot(rf_model)
 # raster, uma para cada classe. Para cada um desses mapas, o
 # valor do pixel é proporcional a probabilidade que ele pertence
 # a classe.
+
+# Classify the raster image
+
+sinop_probs <- sits_classify(
+  data = sinop_cube,
+  ml_model = rf_model,
+  multicores = 2,
+  memsize = 8,
+  output_dir = "arquivos_pacote_sits"
+)
+
+class(sinop_probs)
+view(sinop_probs)
+
+# Plot the probability cube for class Forest
+
+plot(sinop_probs, labels = "Forest", palette = "BuGn")

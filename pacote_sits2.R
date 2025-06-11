@@ -190,12 +190,25 @@ sinop_bayes <- sits_smooth(
 view(sinop_bayes)
 
 plot(sinop_bayes, labels = "Forest", palette = "BuGn")
+plot(sinop_bayes, labels = "Soy_Cotton", palette = "BuGn")
 
 # Rotulando um cubo de dados de probabilidade ----------------------------------------------------------------------------------------------
 
+# After removing outliers using local smoothing, the final 
+# classification map can be obtained using sits_label_classification(). 
+# This function assigns each pixel to the class with the highest 
+# probability.
 
+# Label the probability file
 
+sinop_map <- sits_label_classification(
+  cube = sinop_bayes,
+  output_dir = "arquivos_pacote_sits"
+)
 
+view(sinop_map)
+
+plot(sinop_map)
 
 
 

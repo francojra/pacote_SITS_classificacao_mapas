@@ -166,3 +166,12 @@ view(sinop_probs)
 # Plot the probability cube for class Forest
 
 plot(sinop_probs, labels = "Forest", palette = "BuGn")
+
+
+
+
+
+
+
+
+

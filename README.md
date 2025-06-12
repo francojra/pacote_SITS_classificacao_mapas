@@ -51,5 +51,7 @@ A função sits_cube() suporta acesso para coleções de imagens em serviços de
 
 - **source**: nome do provedor.
 - **collection**: uma coleção de imagens disponíveis no provedor e suportado pelo sits. Para descobrir quais coleções são suportadas pelo sits, ver a função sits_list_collection().
-- **plataform**:
+- **plataform**: parâmetro opcional que especifica a plataforma em coleções com múltiplos satélites.
+- **tiles**: conjunto de tiles do sistema de referência de coleção de imagens. É necessário especificar tiles ou roi.
+- **roi**: 
 

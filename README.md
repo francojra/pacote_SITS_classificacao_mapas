@@ -2,7 +2,7 @@
 
 #### Autoria do script: Jeanne Franco
 #### Data: 23/05/25
-#### Referência: https://e-sensing.github.io/sitsbook/introduction.html
+#### Referência: https://e-sensing.github.io/sitsbook/index.html
 
 ## Conceitos
 

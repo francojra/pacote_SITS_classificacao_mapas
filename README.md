@@ -47,4 +47,9 @@ Cada etapa do fluxo de trabalho corresponde a uma função do sits API, como mos
 
 Para obter informações sobre a coleção de imagens ARD de provedores de nuvem, o SIT utiliza o protocolo Spatio Temporal Asset Catalogue (STAC), uma especificação de informações geoespaciais adotada por muitos grandes provedores de coleção de imagens. Um "ativo espaço-temporal" é qualquer arquivo que represente informações sobre a Terra capturadas em um espaço e tempo específicos. Para acessar os endpoints do STAC, o SIT utiliza o pacote do R rstac.
 
+A função sits_cube() suporta acesso para coleções de imagens em serviços de nuvem; ele tem os seguintes parâmetros:
+
+- **source**: nome do provedor.
+- **collection**: uma coleção de imagens disponíveis no provedor e suportado pelo sits. Para descobrir quais coleções são suportadas pelo sits, ver a função sits_list_collection().
+- **plataform**:
 

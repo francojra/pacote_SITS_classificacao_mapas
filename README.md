@@ -53,5 +53,5 @@ A função sits_cube() suporta acesso para coleções de imagens em serviços de
 - **collection**: uma coleção de imagens disponíveis no provedor e suportado pelo sits. Para descobrir quais coleções são suportadas pelo sits, ver a função sits_list_collection().
 - **plataform**: parâmetro opcional que especifica a plataforma em coleções com múltiplos satélites.
 - **tiles**: conjunto de tiles do sistema de referência de coleção de imagens. É necessário especificar tiles ou roi.
-- **roi**: 
+- **roi**: uma região de interesse. Pode ser um vetor nomeado (lon_min, lon_max, lat_min, lat_max) em coordenadas WGS 84; ou um objeto sf. Todas as imagens interseccionando o envoltório convexo do roi são selecionadas.
 

@@ -42,3 +42,9 @@ O pacote fornece ferramentas para análises, visualização e classificação de
 Cada etapa do fluxo de trabalho corresponde a uma função do sits API, como mostrado na figura abaixo. Essas funções tem parâmetros e comportamentos padrões convenientes. Uma simples função constroi modelos de machine learning. A função de classificação processa cubos de big data com processamento paralelo eficiente. Como a API SITs é simples de aprender, alcançar bons resultados não exige conhecimento profundo sobre aprendizado de máquina e processamento paralelo.
 
 ![Principais funções do sits API (fonte: autores).](https://e-sensing.github.io/sitsbook/images/sits_api.png)
+
+### Criando cubos de dados
+
+Para obter informações sobre a coleção de imagens ARD de provedores de nuvem, o SIT utiliza o protocolo Spatio Temporal Asset Catalogue (STAC), uma especificação de informações geoespaciais adotada por muitos grandes provedores de coleção de imagens. Um "ativo espaço-temporal" é qualquer arquivo que represente informações sobre a Terra capturadas em um espaço e tempo específicos. Para acessar os endpoints do STAC, o SIT utiliza o pacote do R rstac.
+
+

@@ -54,4 +54,10 @@ A função sits_cube() suporta acesso para coleções de imagens em serviços de
 - **plataform**: parâmetro opcional que especifica a plataforma em coleções com múltiplos satélites.
 - **tiles**: conjunto de tiles do sistema de referência de coleção de imagens. É necessário especificar tiles ou roi.
 - **roi**: uma região de interesse. Pode ser um vetor nomeado (lon_min, lon_max, lat_min, lat_max) em coordenadas WGS 84; ou um objeto sf. Todas as imagens interseccionando o envoltório convexo do roi são selecionadas.
+- **bands**: parâmetro opcional com as bandas a serem usadas. Se omitido no código, todas as bandas da coleção são usadas.
+- **orbit**: parâmetro opcional requerido apenas para imagens Sentinel-1 (default = “descending”).
+- **start_date**: a data inicial para o intervalo temporal contendo as séries de tempo de imagens.
+- **end_date**: a data final para o intervalo temporal contendo as séries de tempo das imagens.
+
+
 

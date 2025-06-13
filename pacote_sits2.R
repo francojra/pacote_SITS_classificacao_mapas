@@ -218,6 +218,18 @@ library(tibble)
 library(sits)
 library(sitsdata)
 
+## Criar um cubo de dados
+
+sits::sits_list_collections()
+
+sinop_cube <- sits_cube(
+  source = "BDC",
+  collection = "SENTINEL-2-16D", # (SENTINEL-2/MSI)
+  bands = c("NDVI", "EVI"),
+  data_dir = system.file("extdata/sinop", package = "sitsdata"),
+  parse_info = c("satellite", "sensor", "tile", "band", "date")
+)
+
 
 
 ## Região de interesse:

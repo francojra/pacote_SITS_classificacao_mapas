@@ -255,8 +255,4 @@ plot(sinop_cube,
 )
 
 
-## Região de interesse:
-## -53.1871,-13.7955,-52.0871,-12.8816 (Cerrado)
-
-
 

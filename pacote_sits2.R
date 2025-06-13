@@ -210,7 +210,18 @@ view(sinop_map)
 
 plot(sinop_map)
 
+# Exercício --------------------------------------------------------------------------------------------------------------------------------
 
+## Baixar pacotes
+
+library(tibble)
+library(sits)
+library(sitsdata)
+
+
+
+## Região de interesse:
+## -53.1871,-13.7955,-52.0871,-12.8816 (Cerrado)
 
 
 

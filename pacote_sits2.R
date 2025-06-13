@@ -222,14 +222,19 @@ library(sitsdata)
 
 sits::sits_list_collections()
 
+roi <- c(
+  lon_min = -43.5526, lat_min = -2.9644,
+  lon_max = -42.5124, lat_max = -2.1671
+)
+
 sinop_cube <- sits_cube(
   source = "AWS",
   collection = "SENTINEL-2-L2A", 
-  tiles = "23MMU",
+  #tiles = "23MMU",
   bands = c("B02", "B8A", "B11", "CLOUD"),
   #data_dir = system.file("extdata/sinop", package = "sitsdata"),
-  parse_info = c("satellite", "sensor", "tile", "band", "date")
- # roi = "-53.1871,-13.7955,-52.0871,-12.8816"
+  parse_info = c("satellite", "sensor", "tile", "band", "date"),
+  roi = roi
 )
 
 view(sinop_cube)
@@ -241,9 +246,10 @@ sits_timeline(sinop_cube)
 ## Criar mapa NDVI para primeira data
 
 plot(sinop_cube,
-  band = "NDVI",
   dates = "2025-05-31",
-  palette = "RdYlGn"
+  red = "B11",
+  blue = "B02",
+  green = "B8A"
 )
 
 

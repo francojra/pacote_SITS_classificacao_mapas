@@ -223,11 +223,13 @@ library(sitsdata)
 sits::sits_list_collections()
 
 sinop_cube <- sits_cube(
-  source = "BDC",
-  collection = "SENTINEL-2-16D", # (SENTINEL-2/MSI)
-  bands = c("NDVI", "EVI"),
-  data_dir = system.file("extdata/sinop", package = "sitsdata"),
+  source = "AWS",
+  collection = "SENTINEL-2-L2A", 
+  tiles = "23MMU",
+  bands = c("B02", "B8A", "B11", "CLOUD"),
+  #data_dir = system.file("extdata/sinop", package = "sitsdata"),
   parse_info = c("satellite", "sensor", "tile", "band", "date")
+ # roi = "-53.1871,-13.7955,-52.0871,-12.8816"
 )
 
 view(sinop_cube)
@@ -240,7 +242,7 @@ sits_timeline(sinop_cube)
 
 plot(sinop_cube,
   band = "NDVI",
-  dates = "2014-05-25",
+  dates = "2025-05-31",
   palette = "RdYlGn"
 )
 

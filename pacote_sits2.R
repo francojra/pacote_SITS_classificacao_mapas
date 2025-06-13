@@ -222,6 +222,8 @@ library(sitsdata)
 
 sits::sits_list_collections()
 
+## Definir uma região de interesse
+
 roi <- c(
   lon_min = -43.5526, lat_min = -2.9644,
   lon_max = -42.5124, lat_max = -2.1671
@@ -246,7 +248,7 @@ sits_timeline(sinop_cube)
 ## Criar mapa NDVI para primeira data
 
 plot(sinop_cube,
-  dates = "2025-05-31",
+  dates = "2025-05-08",
   red = "B11",
   blue = "B02",
   green = "B8A"

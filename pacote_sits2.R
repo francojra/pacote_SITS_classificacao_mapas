@@ -230,6 +230,19 @@ sinop_cube <- sits_cube(
   parse_info = c("satellite", "sensor", "tile", "band", "date")
 )
 
+view(sinop_cube)
+
+# Show the R object that describes the data cube
+
+sits_timeline(sinop_cube)
+
+## Criar mapa NDVI para primeira data
+
+plot(sinop_cube,
+  band = "NDVI",
+  dates = "2014-05-25",
+  palette = "RdYlGn"
+)
 
 
 ## Região de interesse:

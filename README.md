@@ -63,5 +63,12 @@ O resultado de sits_cube() é um tibble com uma descrição das imagens selecion
 
 ## Tópicos do script
 
-### Baixar e carregar pacote sitsdata
-### Baixar pacotes para análises
+- Baixar e carregar pacote sitsdata
+- Baixar pacotes para análises
+- Criar um cubo de dados usando arquivos locais
+- Gráfico de NDVI para a primeira data (14-09-2013)
+- Séries temporais formato tibble
+- Treinando modelo de machine learning
+- Classificação do modelo de machine learning
+- Espacial smoothing
+- Rotulando um cubo de dados de probabilidade

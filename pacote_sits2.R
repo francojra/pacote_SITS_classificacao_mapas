@@ -225,13 +225,13 @@ sits::sits_list_collections()
 ## Definir uma região de interesse
 
 # Oeste, Sul, Leste, Norte
-# -52.3231,-21.0990,-50.9816,-20.0311
+# -49.3667,-14.9694,-47.8105,-13.5454
 # A latitude indica a distância norte ou sul do Equador
 # a longitude mede a distância leste ou oeste do Meridiano de Greenwich
 
 roi <- c(
-  lon_min = -52.3231, lat_min = -21.0990,
-  lon_max = -50.9816, lat_max = -20.0311
+  lon_min = -49.3667, lat_min = -14.9694,
+  lon_max = -47.8105, lat_max = -13.5454
 )
 
 # roi <- c(
@@ -242,7 +242,9 @@ roi <- c(
 sinop_cube <- sits_cube(
   source = "AWS",
   collection = "SENTINEL-2-L2A", 
-  #tiles = "23MMU",
+  #tiles = "23MMU", # Quando define o roi, 
+  # não precisa colocar o tile, pois o tile já 
+  # é uma região definida.
   bands = c("B02", "B8A", "B11", "CLOUD"),
   #data_dir = system.file("extdata/sinop", package = "sitsdata"),
   parse_info = c("satellite", "sensor", "tile", "band", "date"),

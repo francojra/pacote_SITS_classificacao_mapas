@@ -3,9 +3,9 @@
 
 # Baixar e carregar pacote sitsdata --------------------------------------------------------------------------------------------------------
 
-library(devtools) # Necessário para baixar o pacote
-options(download.file.method = "wininet")
-devtools::install_github("e-sensing/sitsdata")
+# library(devtools) # Necessário para baixar o pacote
+# options(download.file.method = "wininet")
+# devtools::install_github("e-sensing/sitsdata")
 
 # Baixar pacotes para análises -------------------------------------------------------------------------------------------------------------
 
@@ -141,7 +141,7 @@ library(randomForestExplainer)
 
 plot(rf_model)
 
-# Treinar modelo de machine learning -------------------------------------------------------------------------------------------------------
+# Classificação do modelo de machine learning -------------------------------------------------------------------------------------------------------
 
 # Após treinar o modelo de machine learning, o próximo passo
 # é classificar o cubo de dados usando sits_classify().

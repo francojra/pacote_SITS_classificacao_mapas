@@ -224,10 +224,20 @@ sits::sits_list_collections()
 
 ## Definir uma região de interesse
 
+# Oeste, Sul, Leste, Norte
+# -52.3231,-21.0990,-50.9816,-20.0311
+# A latitude indica a distância norte ou sul do Equador
+# a longitude mede a distância leste ou oeste do Meridiano de Greenwich
+
 roi <- c(
-  lon_min = -43.5526, lat_min = -2.9644,
-  lon_max = -42.5124, lat_max = -2.1671
+  lon_min = -52.3231, lat_min = -21.0990,
+  lon_max = -50.9816, lat_max = -20.0311
 )
+
+# roi <- c(
+#   lon_min = -43.5526, lat_min = -2.9644,
+#   lon_max = -42.5124, lat_max = -2.1671
+# )
 
 sinop_cube <- sits_cube(
   source = "AWS",
@@ -248,7 +258,7 @@ sits_timeline(sinop_cube)
 ## Criar mapa NDVI para primeira data
 
 plot(sinop_cube,
-  dates = "2025-05-08",
+  #dates = "2025-05-06",
   red = "B11",
   blue = "B02",
   green = "B8A"

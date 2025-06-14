@@ -63,3 +63,5 @@ O resultado de sits_cube() é um tibble com uma descrição das imagens selecion
 
 ## Tópicos do script
 
+### Baixar e carregar pacote sitsdata
+### Baixar pacotes para análises

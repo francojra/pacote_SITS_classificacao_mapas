@@ -61,3 +61,5 @@ A função sits_cube() suporta acesso para coleções de imagens em serviços de
 
 O resultado de sits_cube() é um tibble com uma descrição das imagens selecionadas necessárias para processamento posterior. Ele não contém os dados reais, mas apenas ponteiros para as imagens. Os atributos de arquivos de imagem individuais podem ser acessados ​​listando a coluna file_info do tibble.
 
+## Tópicos do script
+

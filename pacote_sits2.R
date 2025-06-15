@@ -247,7 +247,7 @@ sinop_cube <- sits_cube(
   # é uma região definida.
   bands = c("B02", "B8A", "B11", "CLOUD"),
   #data_dir = system.file("extdata/sinop", package = "sitsdata"),
-  parse_info = c("satellite", "sensor", "tile", "band", "date"),
+  #parse_info = c("satellite", "sensor", "tile", "band", "date"),
   roi = roi
 )
 
@@ -260,7 +260,6 @@ sits_timeline(sinop_cube)
 ## Criar mapa NDVI para primeira data
 
 plot(sinop_cube,
-  #dates = "2025-05-06",
   red = "B11",
   blue = "B02",
   green = "B8A"

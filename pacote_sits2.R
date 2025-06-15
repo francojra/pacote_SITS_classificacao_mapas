@@ -259,11 +259,22 @@ sits_timeline(sinop_cube)
 
 ## Criar mapa NDVI para primeira data
 
-plot(sinop_cube,
+### NDVI 2013
+plot(sinop_cube, 
+  dates = "2013-05-25",
   band = "NDVI",
-  dates = "2013-09-14",
   palette = "RdYlGn"
 )
 
+### NDVI 2025
+plot(sinop_cube, 
+  dates = "2025-05-25",
+  band = "NDVI",
+  palette = "RdYlGn"
+)
 
-
+  
+  
+  
+  
+  

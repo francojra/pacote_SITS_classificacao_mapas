@@ -229,7 +229,7 @@ sits::sits_list_collections()
 # A latitude indica a distância norte ou sul do Equador
 # a longitude mede a distância leste ou oeste do Meridiano de Greenwich
 
-roi <- c(
+roi <- list(
   lon_min = -47.6000, lat_min = -14.2000,
   lon_max = -47.5000, lat_max = -14.1000
 )

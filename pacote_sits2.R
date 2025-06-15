@@ -245,9 +245,9 @@ sinop_cube <- sits_cube(
   #tiles = "23MMU", # Quando define o roi, 
   # não precisa colocar o tile, pois o tile já 
   # é uma região definida.
-  bands = c("B02", "B8A", "B11", "CLOUD"),
+  bands = c("B02", "B8A", "B11"),
   #data_dir = system.file("extdata/sinop", package = "sitsdata"),
-  #parse_info = c("satellite", "sensor", "tile", "band", "date"),
+  parse_info = c("satellite", "sensor", "tile", "band", "date"),
   roi = roi
 )
 

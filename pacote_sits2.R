@@ -260,9 +260,9 @@ sits_timeline(sinop_cube)
 ## Criar mapa NDVI para primeira data
 
 plot(sinop_cube,
-  red = "B11",
-  blue = "B02",
-  green = "B8A"
+  band = "NDVI",
+  dates = "2013-09-14",
+  palette = "RdYlGn"
 )
 
 

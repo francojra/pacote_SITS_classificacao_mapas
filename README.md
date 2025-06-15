@@ -72,3 +72,4 @@ O resultado de sits_cube() é um tibble com uma descrição das imagens selecion
 - Classificação do modelo de machine learning
 - Espacial smoothing
 - Rotulando um cubo de dados de probabilidade
+- Exercícios

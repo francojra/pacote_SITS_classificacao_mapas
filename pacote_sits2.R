@@ -302,14 +302,8 @@ samples_dense_woodland <- dplyr::filter(
     label == "Dense_Woodland"
 )
 
-samples_woodland_pasture <- dplyr::filter(
-  samples_cerrado_mod13q1,
-    label %in% c("Dense_Woodland", "Pasture"
-))
-
 view(samples_savana)
 view(samples_dense_woodland)
-view(samples_woodland_pasture)
 
 # select the NDVI band for all samples with label "Forest"
 
@@ -321,5 +315,4 @@ samples_savana_ndvi <- sits_select(
 view(samples_savana_ndvi)
 
 plot(samples_savana_ndvi)
-  
   

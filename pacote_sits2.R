@@ -278,6 +278,35 @@ plot(sinop_cube,
 
 view(sinop_cube$file_info[[1]])
 
-  
+# Séries temporais
+
+data("samples_cerrado_mod13q1", package = "sitsdata")
+view(samples_cerrado_mod13q1)
+
+# Load the time series for MODIS samples for Mato Grosso
+
+view(samples_cerrado_mod13q1[1, ]$time_series[[1]])
+
+summary(samples_cerrado_mod13q1)
+
+# select all samples with label "Forest"
+
+samples_savana <- dplyr::filter(
+  samples_cerrado_mod13q1,
+    label == "Savanna"
+)
+
+view(samples_savana)
+
+# select the NDVI band for all samples with label "Forest"
+
+samples_savana_ndvi <- sits_select(
+  samples_savana,
+  band = "NDVI" # Entretanto, gera gráficos de todos os índices
+)
+
+view(samples_savana_ndvi)
+
+plot(samples_savana_ndvi)
   
   

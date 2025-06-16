@@ -252,6 +252,7 @@ sinop_cube <- sits_cube(
 )
 
 view(sinop_cube)
+view(sinop_cube[1, ]$file_info[[1]])
 
 # Mostrar dados de tempo do cubo
 
@@ -289,14 +290,26 @@ view(samples_cerrado_mod13q1[1, ]$time_series[[1]])
 
 summary(samples_cerrado_mod13q1)
 
-# select all samples with label "Forest"
+# select samples with label 
 
 samples_savana <- dplyr::filter(
   samples_cerrado_mod13q1,
     label == "Savanna"
 )
 
+samples_dense_woodland <- dplyr::filter(
+  samples_cerrado_mod13q1,
+    label == "Dense_Woodland"
+)
+
+samples_woodland_pasture <- dplyr::filter(
+  samples_cerrado_mod13q1,
+    label %in% c("Dense_Woodland", "Pasture"
+))
+
 view(samples_savana)
+view(samples_dense_woodland)
+view(samples_woodland_pasture)
 
 # select the NDVI band for all samples with label "Forest"
 

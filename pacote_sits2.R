@@ -253,7 +253,7 @@ sinop_cube <- sits_cube(
 
 view(sinop_cube)
 
-# Show the R object that describes the data cube
+# Mostrar dados de tempo do cubo
 
 sits_timeline(sinop_cube)
 
@@ -273,8 +273,11 @@ plot(sinop_cube,
   palette = "RdYlGn"
 )
 
-  
-  
+# Mostrar informações sobre os arquivos de imagens que são
+# parte do cubo de dados
+
+view(sinop_cube$file_info[[1]])
+
   
   
   

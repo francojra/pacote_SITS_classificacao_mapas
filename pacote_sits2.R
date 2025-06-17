@@ -314,10 +314,10 @@ view(samples_dense_woodland)
 
 # select the NDVI band for all samples with label "Forest"
 
-samples_savana_ndvi <- sits_select(
+samples_savana_ndvi <- sits_select( 
   samples_savana,
   band = "NDVI" # Entretanto, gera gráficos de todos os índices
-)
+  )
 
 view(samples_savana_ndvi)
 plot(samples_savana_ndvi)

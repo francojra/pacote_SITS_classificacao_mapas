@@ -329,3 +329,29 @@ samples_dense_woodland_ndvi <- sits_select(
 
 view(samples_dense_woodland_ndvi)
 plot(samples_dense_woodland_ndvi)
+
+# Modelo de machine learning
+
+set.seed(03022024)
+
+# Select the bands NDVI and EVI
+
+samples_2bands <- sits_select(
+  data = samples_cerrado_mod13q1,
+  bands = c("NDVI", "EVI")
+)
+
+view(samples_2bands)
+
+# Treinar modelo random forest 
+
+rf_model <- sits_train(
+  samples = samples_2bands,
+  ml_method = sits_rfor()
+)
+
+# Gráfico com as mais importantes variáveis do modelo
+
+library(randomForestExplainer)
+
+plot(rf_model)

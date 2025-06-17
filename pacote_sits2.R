@@ -281,10 +281,6 @@ plot(small_cube,
  # palette = "RdYlGn")
 )
 
-sits_bbox(sinop_cube)  # após sits_select()
-nrow(sinop_cube)
-plot(sinop_cube, band = "NDVI", zoom = TRUE)
-
 # Mostrar informações sobre os arquivos de imagens que são
 # parte do cubo de dados
 
@@ -327,7 +323,7 @@ view(samples_savana_ndvi)
 plot(samples_savana_ndvi)
   
 samples_dense_woodland_ndvi <- sits_select(
-  samples_savana,
+  samples_dense_woodland,
   band = "NDVI" # Entretanto, gera gráficos de todos os índices
 )
 

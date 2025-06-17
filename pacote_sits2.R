@@ -240,12 +240,14 @@ roi <- list(
 # )
 
 sinop_cube <- sits_cube(
-  source = "BDC", # "AWS"
-  collection = "MOD13Q1-6.1", # "SENTINEL-2-L2A"
+  source = "TERRASCOPE", # "BDC"
+  collection = "WORLD-COVER-2021", #  MOD13Q1-6.1
   #tiles = "23MMU", # Quando define o roi, 
   # não precisa colocar o tile, pois o tile já 
   # é uma região definida.
-  bands = c("NDVI", "EVI"), # "B02", "B8A", "B11"
+ # bands = c("B02", "B8A", "B11"), # 
+  # "NDVI", "EVI", "BLUE", "RED", 
+           # "NIR", "MIR", "CLOUD"
   #data_dir = system.file("extdata/sinop", package = "sitsdata"),
   parse_info = c("satellite", "sensor", "tile", "band", "date"),
   roi = roi
@@ -260,19 +262,28 @@ sits_timeline(sinop_cube)
 
 ## Criar mapa NDVI para primeira data
 
-### NDVI 2013
 plot(sinop_cube, 
-  dates = "2013-05-25",
-  band = "NDVI",
-  palette = "RdYlGn"
+  dates = "2021-12-31",
+  band = "CLASS",
+  #palette = "RdYlGn"
 )
 
-### NDVI 2025
-plot(sinop_cube, 
+## Visualizar apenas a área de interesse
+
+# Após criar o cube
+small_cube <- sits_select(data = sinop_cube, roi = roi)
+view(small_cube)
+
+# Agora plote só a área do ROI
+plot(small_cube,
   dates = "2025-05-25",
-  band = "NDVI",
-  palette = "RdYlGn"
+  band = "CLASS",
+ # palette = "RdYlGn")
 )
+
+sits_bbox(sinop_cube)  # após sits_select()
+nrow(sinop_cube)
+plot(sinop_cube, band = "NDVI", zoom = TRUE)
 
 # Mostrar informações sobre os arquivos de imagens que são
 # parte do cubo de dados
@@ -313,6 +324,12 @@ samples_savana_ndvi <- sits_select(
 )
 
 view(samples_savana_ndvi)
-
 plot(samples_savana_ndvi)
   
+samples_dense_woodland_ndvi <- sits_select(
+  samples_savana,
+  band = "NDVI" # Entretanto, gera gráficos de todos os índices
+)
+
+view(samples_dense_woodland_ndvi)
+plot(samples_dense_woodland_ndvi)

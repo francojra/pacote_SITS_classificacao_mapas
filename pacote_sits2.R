@@ -352,6 +352,7 @@ rf_model <- sits_train(
 
 # Gráfico com as mais importantes variáveis do modelo
 
+# Necessário baixar o pacote "randomForestExplainer"
 library(randomForestExplainer)
 
 plot(rf_model)

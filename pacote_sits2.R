@@ -376,19 +376,3 @@ library(randomForestExplainer)
 
 plot(rf_model)
 
-# Classificar imagem raster
-
-sinop_probs <- sits_classify(
-  data = sinop_cube,
-  ml_model = rf_model,
-  multicores = 2,
-  memsize = 8,
-  output_dir = "arquivos_pacote_sits"
-)
-
-class(sinop_probs)
-view(sinop_probs)
-
-# Gráfico do cubo de probabilidade para a classe dense woodland
-
-plot(sinop_probs, labels = "Dense_Woodland", palette = "BuGn")

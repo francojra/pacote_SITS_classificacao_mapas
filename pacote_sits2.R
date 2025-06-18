@@ -294,6 +294,9 @@ view(samples_cerrado_mod13q1)
 # Load the time series for MODIS samples for Mato Grosso
 
 view(samples_cerrado_mod13q1[1, ]$time_series[[1]])
+summary(samples_cerrado_mod13q1)
+
+# Gráfico de barras com as classificações e frequências
 
 tab <- summary(samples_cerrado_mod13q1)
 class(tab)
@@ -308,14 +311,6 @@ ggplot(tab, aes(x = fct_reorder(label, count),
   coord_flip() +
   scale_y_continuous(expand = expansion(mult = c(0, .1))) +
   labs(x = "Classificações", y = "Contagem")
-
-# Gráfico com proporções por classes
-
-library(ggplot2)
-
-ggplot(samples_cerrado_mod13q1, 
-       aes(x = as.factor(label), y = count)) +
-  geom_col()
 
 # select samples with label 
 

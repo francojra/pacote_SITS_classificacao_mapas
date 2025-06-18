@@ -295,7 +295,17 @@ view(samples_cerrado_mod13q1)
 
 view(samples_cerrado_mod13q1[1, ]$time_series[[1]])
 
-summary(samples_cerrado_mod13q1)
+tab <- summary(samples_cerrado_mod13q1)
+class(tab)
+view(tab)
+
+# Gráfico com proporções por classes
+
+library(ggplot2)
+
+ggplot(samples_cerrado_mod13q1, 
+       aes(x = as.factor(label), y = count)) +
+  geom_col()
 
 # select samples with label 
 

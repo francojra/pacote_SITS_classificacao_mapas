@@ -302,10 +302,12 @@ view(tab)
 library(ggplot2)
 library(forcats)
 
-ggplot(tab, aes(y = fct_reorder(label, count), 
-                x = count)) +
+ggplot(tab, aes(x = fct_reorder(label, count), 
+                y = count)) +
   geom_col(fill = "#304983", color = "beige") +
-  scale_x_continuous(expand = expansion(mult = c(0, .1)))
+  coord_flip() +
+  scale_y_continuous(expand = expansion(mult = c(0, .1))) +
+  labs(x = "Classificações", y = "Contagem")
 
 # Gráfico com proporções por classes
 

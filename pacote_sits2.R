@@ -299,6 +299,10 @@ tab <- summary(samples_cerrado_mod13q1)
 class(tab)
 view(tab)
 
+ggplot(tab, aes(x = as.factor(label), y = count)) +
+  geom_col(fill = "#304983", color = "beige") +
+  coord_flip()
+
 # Gráfico com proporções por classes
 
 library(ggplot2)

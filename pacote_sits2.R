@@ -299,7 +299,11 @@ tab <- summary(samples_cerrado_mod13q1)
 class(tab)
 view(tab)
 
-ggplot(tab, aes(x = as.factor(label), y = count)) +
+library(ggplot2)
+library(forcats)
+
+ggplot(tab, aes(x = fct_reorder(as.factor(label)), 
+                y = count)) +
   geom_col(fill = "#304983", color = "beige") +
   coord_flip()
 

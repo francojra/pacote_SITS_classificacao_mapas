@@ -271,10 +271,12 @@ plot(sinop_cube,
 ## Visualizar apenas a área de interesse
 
 # Após criar o cube
+
 small_cube <- sits_select(data = sinop_cube, roi = roi)
 view(small_cube)
 
-# Agora plote só a área do ROI
+# Agora plota só a área do ROI
+
 plot(small_cube,
   dates = "2025-05-25",
   band = "CLASS",
@@ -291,7 +293,7 @@ view(sinop_cube$file_info[[1]])
 data("samples_cerrado_mod13q1", package = "sitsdata")
 view(samples_cerrado_mod13q1)
 
-# Load the time series for MODIS samples for Mato Grosso
+# Carregar amostras de séries temporais para o Cerrado
 
 view(samples_cerrado_mod13q1[1, ]$time_series[[1]])
 summary(samples_cerrado_mod13q1)
@@ -312,7 +314,7 @@ ggplot(tab, aes(x = fct_reorder(label, count),
   scale_y_continuous(expand = expansion(mult = c(0, .1))) +
   labs(x = "Classificações", y = "Contagem")
 
-# select samples with label 
+# Selecionar amostras com rótulos "label"
 
 samples_savana <- dplyr::filter(
   samples_cerrado_mod13q1,
@@ -327,7 +329,8 @@ samples_dense_woodland <- dplyr::filter(
 view(samples_savana)
 view(samples_dense_woodland)
 
-# select the NDVI band for all samples with label "Forest"
+# Selecionar a banda NDVI para todas as amostras com o rótulo
+# "Savana"
 
 samples_savana_ndvi <- sits_select( 
   samples_savana,
@@ -349,7 +352,7 @@ plot(samples_dense_woodland_ndvi)
 
 set.seed(03022024)
 
-# Select the bands NDVI and EVI
+# Selecionar as bandas NDVI e EVI
 
 samples_2bands <- sits_select(
   data = samples_cerrado_mod13q1,
@@ -372,3 +375,20 @@ rf_model <- sits_train(
 library(randomForestExplainer)
 
 plot(rf_model)
+
+# Classificar imagem raster
+
+sinop_probs <- sits_classify(
+  data = sinop_cube,
+  ml_model = rf_model,
+  multicores = 2,
+  memsize = 8,
+  output_dir = "arquivos_pacote_sits"
+)
+
+class(sinop_probs)
+view(sinop_probs)
+
+# Gráfico do cubo de probabilidade para a classe dense woodland
+
+plot(sinop_probs, labels = "Dense_Woodland", palette = "BuGn")

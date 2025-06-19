@@ -79,3 +79,27 @@ plot(s2_L8_cube_MPC,
   red = "RED", green = "GREEN", blue = "BLUE",
   date = "2019-06-30"
 )
+
+## Teste
+
+roi <- c(
+  lon_min = -47.6000, lat_min = -14.2000,
+  lon_max = -47.5000, lat_max = -14.1000
+)
+
+s2_L8_cube_MPC <- sits_cube(
+  source = "MPC",
+  collection = "LANDSAT-C2-L2",
+  bands = c("BLUE", "RED", "GREEN", "NIR08", "SWIR16", "CLOUD"),
+  roi = roi,
+  start_date = "2019-06-01",
+  end_date = "2019-09-01"
+)
+
+View(s2_L8_cube_MPC)
+sits_timeline(s2_L8_cube_MPC)
+
+plot(s2_L8_cube_MPC,
+  red = "RED", green = "GREEN", blue = "BLUE",
+  date = "2019-06-20"
+)

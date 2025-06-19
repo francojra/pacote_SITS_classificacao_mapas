@@ -54,3 +54,28 @@ plot(s2_20LKP_cube_MPC,
 ## roi (região de interesse) deve ser usado para esse cubo. O
 ## exemplo abaixo mostra como recuperar dados de uma região de
 ## interesse cobrindo a cidade de Brasília.
+
+# Ler um ROI que cobre parte da costa nordeste do Brasil
+
+roi <- c(
+  lon_min = -43.5526, lat_min = -2.9644,
+  lon_max = -42.5124, lat_max = -2.1671
+)
+
+# Selecionar um cubo
+
+s2_L8_cube_MPC <- sits_cube(
+  source = "MPC",
+  collection = "LANDSAT-C2-L2",
+  bands = c("BLUE", "RED", "GREEN", "NIR08", "SWIR16", "CLOUD"),
+  roi = roi,
+  start_date = "2019-06-01",
+  end_date = "2019-09-01"
+)
+
+# Plotar o tile que cobre os lençois maranhenses 
+
+plot(s2_L8_cube_MPC,
+  red = "RED", green = "GREEN", blue = "BLUE",
+  date = "2019-06-30"
+)

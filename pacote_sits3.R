@@ -10,7 +10,8 @@ library(sits)
 
 # Amazon Web Services ----------------------------------------------------------------------------------------------------------------------
 
-# Create a data cube covering an area in Brazil
+# Criar um cubo de dados cobrindo uma área do Brasil
+
 s2_23MMU_cube <- sits_cube(
   source = "AWS",
   collection = "SENTINEL-2-L2A",
@@ -29,7 +30,8 @@ plot(s2_23MMU_cube,
 
 # Microsoft Planetary Computer - SENTINEL-2/2A images in MPC -------------------------------------------------------------------------------
 
-# Create a data cube covering an area in the Brazilian Amazon
+# Criar um cubo de dados cobrindo uma área da Amazônia
+
 s2_20LKP_cube_MPC <- sits_cube(
   source = "MPC",
   collection = "SENTINEL-2-L2A",
@@ -39,8 +41,16 @@ s2_20LKP_cube_MPC <- sits_cube(
   end_date = "2019-07-28"
 )
 
-# Plot a color composite of one date of the cube
+# Plotar uma composição de cor de uma data do cubo 
+
 plot(s2_20LKP_cube_MPC,
   red = "B11", blue = "B02", green = "B8A",
   date = "2019-07-18"
 )
+
+# LANDSAT-C2-L2 images in MPC --------------------------------------------------------------------------------------------------------------
+
+## Para essa coleção, pesquisa por tile não é suportado, o parâmetro 
+## roi (região de interesse) deve ser usado para esse cubo. O
+## exemplo abaixo mostra como recuperar dados de uma região de
+## interesse cobrindo a cidade de Brasília.

@@ -4,6 +4,10 @@
 # Data do script: 18/06/2025 ---------------------------------------------------------------------------------------------------------------
 # Referência: https://e-sensing.github.io/sitsbook/earth-observation-data-cubes.html -------------------------------------------------------
 
+# Carregar pacotes -------------------------------------------------------------------------------------------------------------------------
+
+library(sits)
+
 # Create a data cube covering an area in Brazil
 s2_23MMU_cube <- sits_cube(
   source = "AWS",

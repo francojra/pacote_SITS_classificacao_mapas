@@ -8,6 +8,8 @@
 
 library(sits)
 
+# Amazon Web Services ----------------------------------------------------------------------------------------------------------------------
+
 # Create a data cube covering an area in Brazil
 s2_23MMU_cube <- sits_cube(
   source = "AWS",
@@ -17,9 +19,28 @@ s2_23MMU_cube <- sits_cube(
   start_date = "2018-07-12",
   end_date = "2019-07-28"
 )
+
 plot(s2_23MMU_cube,
   red = "B11",
   blue = "B02",
   green = "B8A",
   date = "2018-10-05"
+)
+
+# Microsoft Planetary Computer - SENTINEL-2/2A images in MPC -------------------------------------------------------------------------------
+
+# Create a data cube covering an area in the Brazilian Amazon
+s2_20LKP_cube_MPC <- sits_cube(
+  source = "MPC",
+  collection = "SENTINEL-2-L2A",
+  tiles = "20LKP",
+  bands = c("B02", "B8A", "B11", "CLOUD"),
+  start_date = "2019-07-01",
+  end_date = "2019-07-28"
+)
+
+# Plot a color composite of one date of the cube
+plot(s2_20LKP_cube_MPC,
+  red = "B11", blue = "B02", green = "B8A",
+  date = "2019-07-18"
 )

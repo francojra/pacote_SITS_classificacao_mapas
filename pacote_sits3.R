@@ -97,7 +97,8 @@ s2_L8_cube_MPC <- sits_cube(
 )
 
 View(s2_L8_cube_MPC)
-sits_timeline(s2_L8_cube_MPC)
+sits_timeline(s2_L8_cube_MPC) # Importante sempre verificar as
+# datas disponíveis para esse cubo com um diferente roi
 
 plot(s2_L8_cube_MPC,
   red = "RED", green = "GREEN", blue = "BLUE",

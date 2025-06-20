@@ -138,3 +138,20 @@ cube_s1_rtc <- sits_cube(
 )
 
 plot(cube_s1_rtc, band = "VV", palette = "Greys")
+
+# Copernicus DEM 30 meter images in MPC ----------------------------------------------------------------------------------------------------
+
+roi <- c(
+  lon_min = -47.6000, lat_min = -14.2000,
+  lon_max = -47.5000, lat_max = -14.1000
+)
+
+cube_dem_30 <- sits_cube(
+  source = "MPC",
+  collection = "COP-DEM-GLO-30",
+  #tiles = "20LMR",
+  roi = roi,
+  band = "ELEVATION"
+)
+
+plot(cube_dem_30, band = "ELEVATION", palette = "RdYlGn", rev = TRUE)

@@ -172,3 +172,20 @@ plot(cbers_tile,
   blue = "B13",
   date = "2021-05-09"
 )
+
+## Teste
+
+roi <- c(
+  lon_min = -48.6153, lat_min = -16.9743,
+  lon_max = -44.1079, lat_max = -13.2180
+)
+
+cbers_tile <- sits_cube(
+  source = "BDC",
+  collection = "CBERS-WFI-16D",
+  #tiles = "005004",
+  roi = roi,
+  bands = c("B13", "B14", "B15", "B16", "CLOUD"),
+  start_date = "2021-05-01",
+  end_date = "2021-09-01"
+)

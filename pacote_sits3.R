@@ -124,3 +124,17 @@ cube_s1_grd <- sits_cube(
 )
 
 plot(cube_s1_grd, band = "VV", palette = "Greys")
+
+# SENTINEL-1-RTC images in MPC -------------------------------------------------------------------------------------------------------------
+
+cube_s1_rtc <- sits_cube(
+  source = "MPC",
+  collection = "SENTINEL-1-RTC",
+  bands = c("VV", "VH"),
+  orbit = "descending",
+  tiles = "18NZM",
+  start_date = "2021-08-01",
+  end_date = "2021-09-30"
+)
+
+plot(cube_s1_rtc, band = "VV", palette = "Greys")

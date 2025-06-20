@@ -175,10 +175,14 @@ plot(cbers_tile,
 
 ## Teste
 
+# Definir região de interesse
+
 roi <- c(
   lon_min = -48.6153, lat_min = -16.9743,
   lon_max = -44.1079, lat_max = -13.2180
 )
+
+# Criar cubo
 
 cbers_tile <- sits_cube(
   source = "BDC",
@@ -188,4 +192,13 @@ cbers_tile <- sits_cube(
   bands = c("B13", "B14", "B15", "B16", "CLOUD"),
   start_date = "2021-05-01",
   end_date = "2021-09-01"
+)
+
+# Criar mapa
+
+plot(cbers_tile,
+  red = "B15",
+  green = "B16",
+  blue = "B13",
+  date = "2021-05-09"
 )

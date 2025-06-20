@@ -7,6 +7,9 @@
 # Carregar pacotes -------------------------------------------------------------------------------------------------------------------------
 
 library(sits)
+library(raster)
+library(ggplot2)
+library(ggspatial)
 
 # Amazon Web Services ----------------------------------------------------------------------------------------------------------------------
 
@@ -106,11 +109,18 @@ plot(s2_L8_cube_MPC,
 )
 
 sits::sits_bbox(s2_L8_cube_MPC)
-
 summary(s2_L8_cube_MPC)
 
-s2_L8_cube_MPC_roi <- sits_crop(s2_L8_cube_MPC, roi = roi)
-plot(s2_L8_cube_MPC_roi,
-     red = "RED", green = "GREEN", blue = "BLUE",
-     date = "2019-06-20")
+# SENTINEL-1-GRD images in MPC -------------------------------------------------------------------------------------------------------------
 
+cube_s1_grd <- sits_cube(
+  source = "MPC",
+  collection = "SENTINEL-1-GRD",
+  bands = c("VV"),
+  orbit = "descending",
+  tiles = c("21LUJ", "21LVJ"),
+  start_date = "2021-08-01",
+  end_date = "2021-09-30"
+)
+
+plot(cube_s1_grd, band = "VV", palette = "Greys")

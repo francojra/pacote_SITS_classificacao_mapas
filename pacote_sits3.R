@@ -151,3 +151,24 @@ cube_dem_30 <- sits_cube(
 plot(cube_dem_30, band = "ELEVATION", palette = "RdYlGn", rev = TRUE)
 
 sits:sits_bbox(cube_dem_30)
+
+# Brazil Data Cube -------------------------------------------------------------------------------------------------------------------------
+
+# Define a tile from the CBERS-4/4A AWFI collection
+cbers_tile <- sits_cube(
+  source = "BDC",
+  collection = "CBERS-WFI-16D",
+  #tiles = "005004",
+  roi = roi,
+  bands = c("B13", "B14", "B15", "B16", "CLOUD"),
+  start_date = "2021-05-01",
+  end_date = "2021-09-01"
+)
+
+# Plot one time instance
+plot(cbers_tile,
+  red = "B15",
+  green = "B16",
+  blue = "B13",
+  date = "2021-05-09"
+)

@@ -104,3 +104,13 @@ plot(s2_L8_cube_MPC,
   red = "RED", green = "GREEN", blue = "BLUE",
   date = "2019-06-20"
 )
+
+sits::sits_bbox(s2_L8_cube_MPC)
+
+summary(s2_L8_cube_MPC)
+
+s2_L8_cube_MPC_roi <- sits_crop(s2_L8_cube_MPC, roi = roi)
+plot(s2_L8_cube_MPC_roi,
+     red = "RED", green = "GREEN", blue = "BLUE",
+     date = "2019-06-20")
+

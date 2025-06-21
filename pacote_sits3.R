@@ -235,3 +235,17 @@ plot(dea_l9_cube,
   date = "2023-06-26",
   red = "B06", green = "B05", blue = "B04"
 )
+
+dea_alos_cube <- sits_cube(
+  source = "DEAFRICA",
+  collection = "ALOS-PALSAR-MOSAIC",
+  roi = c(
+    lon_min = 28.69, lat_min = -2.35,
+    lon_max = 29.35, lat_max = -1.56
+  ),
+  bands = c("HH", "HV"),
+  start_date = "2020-01-01",
+  end_date = "2020-12-31"
+)
+
+plot(dea_alos_cube, band = "HH")

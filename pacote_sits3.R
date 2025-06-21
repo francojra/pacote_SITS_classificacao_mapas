@@ -248,4 +248,8 @@ dea_alos_cube <- sits_cube(
   end_date = "2020-12-31"
 )
 
-plot(dea_alos_cube, band = "HH")
+plot(dea_alos_cube, band = "HH", palette = "RdYlGn")
+
+# Digital Earth Australia ------------------------------------------------------------------------------------------------------------------
+
+

@@ -7,6 +7,7 @@
 # Carregar pacotes -------------------------------------------------------------------------------------------------------------------------
 
 library(sits)
+library(sitsdata)
 library(raster)
 library(ggplot2)
 library(ggspatial)
@@ -315,4 +316,16 @@ plot(world_cover_2021_teste)
 
 # Planet data as ARD local files -----------------------------------------------------------------------------------------------------------
 
+# Define the directory where Planet files are stored
+data_dir <- system.file("extdata/Planet", package = "sitsdata")
 
+# Create a data cube from local files
+planet_cube <- sits_cube(
+  source = "PLANET",
+  collection = "MOSAIC",
+  data_dir = data_dir
+)
+
+# Plot the first instance of the Planet data in natural colors
+plot(planet_cube, red = "B3", green = "B2", blue = "B1")
+plot(planet_cube)

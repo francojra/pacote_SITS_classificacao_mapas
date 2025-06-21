@@ -218,3 +218,20 @@ dea_s2_cube <- sits_cube(
 )
 
 plot(dea_s2_cube, red = "B04", blue = "B02", green = "B08")
+
+dea_l9_cube <- sits_cube(
+  source = "DEAFRICA",
+  collection = "LS9-SR",
+  roi = c(
+    lon_min = 33.0, lat_min = -3.60,
+    lon_max = 33.6, lat_max = -3.00
+  ),
+  bands = c("B04", "B05", "B06"),
+  start_date = "2023-05-01",
+  end_date = "2023-08-30"
+)
+
+plot(dea_l9_cube,
+  date = "2023-06-26",
+  red = "B06", green = "B05", blue = "B04"
+)

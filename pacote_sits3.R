@@ -202,3 +202,19 @@ plot(cbers_tile,
   blue = "B13",
   date = "2021-05-09"
 )
+
+# Digital Earth Africa ---------------------------------------------------------------------------------------------------------------------
+
+dea_s2_cube <- sits_cube(
+  source = "DEAFRICA",
+  collection = "SENTINEL-2-L2A",
+  roi = c(
+    lon_min = 46.1, lat_min = -15.6,
+    lon_max = 46.6, lat_max = -16.1
+  ),
+  bands = c("B02", "B04", "B08"),
+  start_date = "2019-04-01",
+  end_date = "2019-05-30"
+)
+
+plot(dea_s2_cube, red = "B04", blue = "B02", green = "B08")

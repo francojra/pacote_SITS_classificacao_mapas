@@ -293,9 +293,20 @@ plot(world_cover_2021_20LBL)
 
 ## Teste
 
+roi <- c(
+  lon_min = -47.6000, lat_min = -14.2000,
+  lon_max = -47.5000, lat_max = -14.1000
+)
+
+world_cover_2021 <- sits_cube(
+  source = "TERRASCOPE",
+  collection = "WORLD-COVER-2021",
+  roi = roi
+)
+
 world_cover_2021_teste <- sits_cube_copy(
   cube = world_cover_2021,
-  roi = bbox_22LBL,
+  roi = roi,
   multicores = 6,
   output_dir = "arquivos_pacote_sits"
 )

@@ -252,4 +252,18 @@ plot(dea_alos_cube, band = "HH", palette = "RdYlGn")
 
 # Digital Earth Australia ------------------------------------------------------------------------------------------------------------------
 
+# get roi for an MGRS tile
+bbox_55KGR <- sits_mgrs_to_roi("55KGR")
 
+# retrieve the world cover map for the chosen roi
+s2_56KKV <- sits_cube(
+  source = "DEAUSTRALIA",
+  collection = "GA_S2AM_ARD_3",
+  tiles = "56KKV",
+  bands = c("BLUE", "GREEN", "RED", "NIR-2", "SWIR-2", "CLOUD"),
+  start_date = "2023-09-01",
+  end_date = "2023-11-30"
+)
+
+# plot the resulting map
+plot(s2_56KKV, green = "NIR-2", blue = "BLUE", red = "SWIR-2", date = "2023-10-14")

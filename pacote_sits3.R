@@ -357,3 +357,46 @@ View(Rondonia_class_cube)
 
 # Plot the classified cube
 plot(Rondonia_class_cube)
+
+# Regularizing data cubes ------------------------------------------------------------------------------------------------------------------
+
+# Creating an irregular data cube from MPC
+s2_cube_rondonia <- sits_cube(
+  source = "MPC",
+  collection = "SENTINEL-2-L2A",
+  roi = roi,
+  tiles = c("20LKP", "20LLP"),
+  bands = c("B02", "B8A", "B11", "CLOUD"),
+  start_date = as.Date("2018-06-30"),
+  end_date = as.Date("2018-08-31")
+)
+
+# Show the different timelines of the cube tiles
+sits_timeline(s2_cube_rondonia)
+
+# plot the first image of the irregular cube
+s2_cube_rondonia |>
+  dplyr::filter(tile == "20LLP") |>
+  plot(red = "B11", green = "B8A", blue = "B02", date = "2018-07-03")
+
+## Teste
+
+# Creating an irregular data cube from MPC
+s2_cube_teste <- sits_cube(
+  source = "MPC",
+  collection = "SENTINEL-2-L2A",
+  roi = roi,
+ # tiles = c("20LKP", "20LLP"),
+  bands = c("B02", "B8A", "B11", "CLOUD"),
+  start_date = as.Date("2018-06-30"),
+  end_date = as.Date("2018-08-31")
+)
+
+# Show the different timelines of the cube tiles
+sits_timeline(s2_cube_teste)
+
+plot(s2_cube_teste, 
+     red = "B11", green = "B8A", 
+     blue = "B02", date = "2018-07-04")
+
+sits_bbox(s2_cube_teste)

@@ -290,3 +290,18 @@ world_cover_2021_20LBL <- sits_cube_copy(
 
 # plot the resulting map
 plot(world_cover_2021_20LBL)
+
+## Teste
+
+world_cover_2021_teste <- sits_cube_copy(
+  cube = world_cover_2021,
+  roi = bbox_22LBL,
+  multicores = 6,
+  output_dir = "arquivos_pacote_sits"
+)
+
+plot(world_cover_2021_teste)
+
+# Planet data as ARD local files -----------------------------------------------------------------------------------------------------------
+
+

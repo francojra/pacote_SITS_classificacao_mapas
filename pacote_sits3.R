@@ -267,3 +267,26 @@ s2_56KKV <- sits_cube(
 
 # plot the resulting map
 plot(s2_56KKV, green = "NIR-2", blue = "BLUE", red = "SWIR-2", date = "2023-10-14")
+
+# EO products from TERRASCOPE --------------------------------------------------------------------------------------------------------------
+
+# get roi for an MGRS tile
+bbox_22LBL <- sits_mgrs_to_roi("22LBL")
+
+# retrieve the world cover map for the chosen roi
+world_cover_2021 <- sits_cube(
+  source = "TERRASCOPE",
+  collection = "WORLD-COVER-2021",
+  roi = bbox_22LBL
+)
+
+# cut the 3 x 3 degree grid to match the MGRS tile 22LBL
+world_cover_2021_20LBL <- sits_cube_copy(
+  cube = world_cover_2021,
+  roi = bbox_22LBL,
+  multicores = 6,
+  output_dir = "arquivos_pacote_sits"
+)
+
+# plot the resulting map
+plot(world_cover_2021_20LBL)

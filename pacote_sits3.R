@@ -345,7 +345,7 @@ Rondonia_class_cube <- sits_cube(
   labels = c(
     "1" = "Burned_Area", "2" = "Cleared_Area",
     "3" = "Highly_Degraded", "4" = "Forest"
-  ),
+  ), 
   data_dir = data_dir,
   parse_info = c(
     "satellite", "sensor", "tile", "start_date", "end_date",

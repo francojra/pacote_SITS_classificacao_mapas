@@ -323,9 +323,37 @@ data_dir <- system.file("extdata/Planet", package = "sitsdata")
 planet_cube <- sits_cube(
   source = "PLANET",
   collection = "MOSAIC",
-  data_dir = data_dir
+  data_dir = data_dir,
+  roi = roi
 )
 
 # Plot the first instance of the Planet data in natural colors
 plot(planet_cube, red = "B3", green = "B2", blue = "B1")
-plot(planet_cube)
+
+# Reading classified images as local data cube ---------------------------------------------------------------------------------------------
+
+# Create a cube based on a classified image
+data_dir <- system.file("extdata/Rondonia-20LLP",
+  package = "sitsdata"
+)
+
+# File name  "SENTINEL-2_MSI_20LLP_2020-06-04_2021-08-26_class_v1.tif"
+Rondonia_class_cube <- sits_cube(
+  source = "AWS",
+  collection = "SENTINEL-S2-L2A-COGS",
+  bands = "class",
+  labels = c(
+    "1" = "Burned_Area", "2" = "Cleared_Area",
+    "3" = "Highly_Degraded", "4" = "Forest"
+  ),
+  data_dir = data_dir,
+  parse_info = c(
+    "satellite", "sensor", "tile", "start_date", "end_date",
+    "band", "version"
+  )
+)
+
+View(Rondonia_class_cube)
+
+# Plot the classified cube
+plot(Rondonia_class_cube)

@@ -63,3 +63,23 @@ reg_cube <- sits_apply(reg_cube,
 
 # Plot NDRE1 index
 plot(reg_cube, band = "NDRE1",  palette = "RdYlGn")
+
+# Spectral indexes for identifying burned areas --------------------------------------------------------------------------------------------
+
+# Band combinations can also generate spectral indices for 
+# detecting degradation by fires, which are an important 
+# element in environmental degradation. 
+
+# One well-established technique for detecting burned areas 
+# with remote sensing images is the normalized burn ratio 
+# (NBR), the difference between the near-infrared and the 
+# short wave infrared band, calculated using bands B8A and B12.
+
+# Calculate the NBR index
+reg_cube <- sits_apply(reg_cube,
+    NBR = (B12 - B8A)/(B12 + B8A),
+    output_dir = tempdir_r
+)
+
+# Plot the NBR for the first date
+plot(reg_cube, band = "NBR", palette = "Reds")

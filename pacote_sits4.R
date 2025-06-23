@@ -38,3 +38,28 @@ reg_cube <- sits_regularize(
           res        = 60,
           period     = "P15D",
           multicores = 4)
+
+# Calculate NDVI index using bands B08 and B04
+reg_cube <- sits_apply(reg_cube,
+    NDVI = (B08 - B04)/(B08 + B04),
+    output_dir = tempdir_r
+)
+
+# Plot
+plot(reg_cube, band = "NDVI", palette = "RdYlGn")
+
+# We now compare the traditional NDVI with other vegetation 
+# index computed using red-edge bands. The example below such 
+# the NDRE1 index, obtained using bands B06 and B05.
+
+# Notice that the contrast between forests and deforested 
+# areas is more robust in the NDRE1 index than with NDVI.
+
+# Calculate NDRE1 index using bands B06 and B05
+reg_cube <- sits_apply(reg_cube,
+    NDRE1 = (B06 - B05)/(B06 + B05),
+    output_dir = tempdir_r
+)
+
+# Plot NDRE1 index
+plot(reg_cube, band = "NDRE1",  palette = "RdYlGn")

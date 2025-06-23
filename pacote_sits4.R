@@ -83,3 +83,12 @@ reg_cube <- sits_apply(reg_cube,
 
 # Plot the NBR for the first date
 plot(reg_cube, band = "NBR", palette = "Reds")
+
+# Support for non-normalized indexes -------------------------------------------------------------------------------------------------------
+
+# CVI is a spectral index used to estimate the chlorophyll 
+# content and overall health of vegetation. It combines bands 
+# in visible and near-infrared (NIR) regions to assess 
+# vegetation characteristics. Since CVI is not normalized, 
+# we have to set the parameter normalized to FALSE to inform 
+# sits_apply().

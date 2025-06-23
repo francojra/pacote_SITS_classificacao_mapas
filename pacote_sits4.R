@@ -92,3 +92,13 @@ plot(reg_cube, band = "NBR", palette = "Reds")
 # vegetation characteristics. Since CVI is not normalized, 
 # we have to set the parameter normalized to FALSE to inform 
 # sits_apply().
+
+# Calculate the NBR index
+reg_cube <- sits_apply(reg_cube,
+    CVI = (B8A / B03) * (B05 / B03 ),
+    normalized = FALSE, 
+    output_dir = tempdir_r
+)
+
+# Plot
+plot(reg_cube, band = "CVI", palette = "Greens")

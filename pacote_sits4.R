@@ -1,0 +1,40 @@
+# Earth observation data cubes -------------------------------------------------------------------------------------------------------------
+# Autora do script: Jeanne Franco ----------------------------------------------------------------------------------------------------------
+# Data do script: 22/06/2025 ---------------------------------------------------------------------------------------------------------------
+# Referência: https://e-sensing.github.io/sitsbook/earth-observation-data-cubes.html -------------------------------------------------------
+
+# Computing NDVI and other spectral indices ------------------------------------------------------------------------------------------------
+
+# Pacotes e diretório ----------------------------------------------------------------------------------------------------------------------
+
+# load package "tibble"
+library(tibble)
+# load packages "sits" and "sitsdata"
+library(sits)
+library(sitsdata)
+# set tempdir if it does not exist 
+tempdir_r <- "arquivos_sits" # Nome da pasta
+dir.create(tempdir_r, showWarnings = FALSE, 
+           recursive = TRUE)
+
+# Calculando índices de vegetação ----------------------------------------------------------------------------------------------------------
+
+# Create an non-regular data cube from AWS
+s2_cube <- sits_cube(
+    source = "AWS",
+    collection = "SENTINEL-S2-L2A-COGS",
+    tiles = "20LKP",
+    bands = c("B02", "B03", "B04", 
+              "B05", "B06", "B07", 
+              "B08", "B8A", "B11", 
+              "B12","CLOUD"),
+    start_date = as.Date("2018-07-01"),
+    end_date = as.Date("2018-08-31"))
+
+# Regularize the cube to 15 day intervals
+reg_cube <- sits_regularize(
+          cube       = s2_cube,
+          output_dir = tempdir_r,
+          res        = 60,
+          period     = "P15D",
+          multicores = 4)

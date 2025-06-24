@@ -65,10 +65,11 @@ tempdir_r_ndvi_max <- file.path(tempdir_r1, "ndvi_max")
 dir.create(tempdir_r_ndvi_max, showWarnings = FALSE)
 
 # Calculate the NBR index
-max_ndvi_cube <- sits_reduce(ndvi_cube,
-    NDVIMAX = t_max(NDVI),
+max_ndvi_cube <- sits_reduce(ndvi_cube_local,
+    NDVIMAX = t_max(NDVI), # t_max() é um operador de redução
     output_dir = tempdir_r_ndvi_max,
     multicores = 4,
     progress = TRUE
 )
+
 plot(max_ndvi_cube, band = "NDVIMAX")

@@ -60,3 +60,15 @@ ndvi_cube_local <- sits_cube_copy(
 ## máximos de NDVI para cada pixel das imagens durante o período
 ## de 01-05-2018 a 30-09-2018.
 
+# create a local directory to store the result of the operation
+tempdir_r_ndvi_max <- file.path(tempdir_r1, "ndvi_max")
+dir.create(tempdir_r_ndvi_max, showWarnings = FALSE)
+
+# Calculate the NBR index
+max_ndvi_cube <- sits_reduce(ndvi_cube,
+    NDVIMAX = t_max(NDVI),
+    output_dir = tempdir_r_ndvi_max,
+    multicores = 4,
+    progress = TRUE
+)
+plot(max_ndvi_cube, band = "NDVIMAX")

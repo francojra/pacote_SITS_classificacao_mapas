@@ -23,3 +23,30 @@ library(sitsdata)
 ## significativa. Operadores de redução são frequentemente usados
 ## para extrair estatísticas chaves ou características de um dado,
 ## tornando ele mais fácil para analisar e interpretar.
+
+# Exemplo ----------------------------------------------------------------------------------------------------------------------------------
+
+# Define a region of interest to be enclosed in the data cube
+roi <- c(
+    "lon_min" = -55.80259, 
+    "lon_max" = -55.199, 
+    "lat_min" = -11.80208, 
+    "lat_max" = -11.49583
+)
+
+# Define a data cube in the MPC repository using NDVI MODIS data
+ndvi_cube <- sits_cube(
+    source = "MPC",
+    collection  = "MOD13Q1-6.1",
+    bands = c("NDVI"),
+    roi = roi,
+    start_date =  "2018-05-01",
+    end_date = "2018-09-30"
+)
+
+# Copy the cube to a local file system
+ndvi_cube_local <- sits_cube_copy(
+    cube = ndvi_cube,
+    output_dir = tempdir_r,
+    multicores = 4
+)

@@ -11,3 +11,15 @@ library(tibble)
 library(sits)
 library(sitsdata)
 
+#  Introduction ----------------------------------------------------------------------------------------------------------------------------
+
+## Existem casos quando usuários quer produzir resultados os
+## valores de uma série temporal associados a cada pixel de 
+## um cubo de dados usando operações de redução. No contexto de
+## análises de séries temporais, um operador de redução é uma
+## função que reduz uma sequência de pontos de dados em um simples
+## valor ou em um menor conjunto de valores. Esse processo envolve
+## resumir ou agregar as informações de uma série temporal de forma
+## significativa. Operadores de redução são frequentemente usados
+## para extrair estatísticas chaves ou características de um dado,
+## tornando ele mais fácil para analisar e interpretar.

@@ -73,3 +73,4 @@ max_ndvi_cube <- sits_reduce(ndvi_cube_local,
 )
 
 plot(max_ndvi_cube, band = "NDVIMAX")
+plot(ndvi_cube, band = "NDVI")

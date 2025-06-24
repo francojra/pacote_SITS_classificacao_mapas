@@ -44,9 +44,13 @@ ndvi_cube <- sits_cube(
     end_date = "2018-09-30"
 )
 
+tempdir_r1 <- "arquivos_sits1" # Nome da pasta
+dir.create(tempdir_r1, showWarnings = FALSE, 
+           recursive = TRUE)
+
 # Copy the cube to a local file system
 ndvi_cube_local <- sits_cube_copy(
     cube = ndvi_cube,
-    output_dir = tempdir_r,
+    output_dir = tempdir_r1,
     multicores = 4
 )

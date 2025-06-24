@@ -54,3 +54,9 @@ ndvi_cube_local <- sits_cube_copy(
     output_dir = tempdir_r1,
     multicores = 4
 )
+
+## Após criar um cubo de dados local sobre os conteúdos do cubo
+## MPC MODIS com a banda NDVI, nós podemos calcular os valores
+## máximos de NDVI para cada pixel das imagens durante o período
+## de 01-05-2018 a 30-09-2018.
+

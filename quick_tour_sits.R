@@ -21,7 +21,9 @@ dir.create(tempdir_r2, showWarnings = FALSE, recursive = TRUE)
 # Load the samples for LEM from the "sitsdata" package
 # select the directory for the samples 
 samples_dir <- system.file("data", package = "sitsdata")
+samples_dir
 
+# Estebelecer o caminho do diretório acima
 setwd("C:/Users/jeann/AppData/Local/R/win-library/4.5/sitsdata/data")
 dir(samples_dir) # Apresenta os arquivos do diretório estabelecido
 

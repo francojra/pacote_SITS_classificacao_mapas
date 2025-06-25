@@ -29,4 +29,5 @@ dir(samples_dir) # Apresenta os arquivos do diretório estabelecido
 
 # retrieve a data.frame with the samples
 samples_cerrado <- readRDS("samples_cerrado_lc8.rds")
+samples_cerrado
 view(samples_cerrado)

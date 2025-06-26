@@ -66,7 +66,7 @@ lem_cube <- sits_cube_copy(
 )
 
 # Plot the cube 
-plot(lem_cube, palette = "RdYlGn")
+plot(lem_cube, band = "NDVI", palette = "RdYlGn")
 
 # Show the description of the data cube
 lem_cube
@@ -81,6 +81,6 @@ sits_timeline(lem_cube)
 
 # Retrieve the time series for each samples based on a data.frame
 samples_lem_time_series <- sits_get_data(
-    cube = bdc_cube,
-    samples = samples_cerrado
+    cube = lem_cube,
+    samples = samples_matogrosso
 )

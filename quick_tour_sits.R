@@ -28,17 +28,16 @@ setwd("C:/Users/jeann/AppData/Local/R/win-library/4.5/sitsdata/data")
 dir(samples_dir) # Apresenta os arquivos do diretório estabelecido
 
 # retrieve a data.frame with the samples
-samples_cerrado <- readRDS("samples_matogrosso_modis.rds")
-samples_cerrado
-view(samples_cerrado)
+samples_matogrosso <- readRDS("samples_matogrosso_modis.rds")
+samples_matogrosso
 
 # Creating a data cube based on the ground truth samples -----------------------------------------------------------------------------------
 
 # Find the the bounding box of the data
-lat_max <- max(samples_cerrado[["latitude"]])
-lat_min <- min(samples_cerrado[["latitude"]])
-lon_max <- max(samples_cerrado[["longitude"]])
-lon_min <- min(samples_cerrado[["longitude"]])
+lat_max <- max(samples_matogrosso[["latitude"]])
+lat_min <- min(samples_matogrosso[["latitude"]])
+lon_max <- max(samples_matogrosso[["longitude"]])
+lon_min <- min(samples_matogrosso[["longitude"]])
 
 # Define the roi for the LEM dataset
 roi_lem <- c(

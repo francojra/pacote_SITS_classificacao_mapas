@@ -59,4 +59,12 @@ bdc_cube <- sits_cube(
 
 # copy the data cube to a local directory  -------------------------------------------------------------------------------------------------
 
+# Copy the region of interest to a local directory
+lem_cube <- sits_cube_copy(
+    cube = bdc_cube,
+    roi = roi_lem,
+    output_dir = tempdir_r
+)
 
+# Plot the cube 
+plot(lem_cube, palette = "RdYlGn")

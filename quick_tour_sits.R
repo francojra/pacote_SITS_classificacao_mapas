@@ -35,10 +35,10 @@ view(samples_cerrado)
 # Creating a data cube based on the ground truth samples -----------------------------------------------------------------------------------
 
 # Find the the bounding box of the data
-lat_max <- max(df_samples_cerrado_lem[["latitude"]])
-lat_min <- min(df_samples_cerrado_lem[["latitude"]])
-lon_max <- max(df_samples_cerrado_lem[["longitude"]])
-lon_min <- min(df_samples_cerrado_lem[["longitude"]])
+lat_max <- max(samples_cerrado[["latitude"]])
+lat_min <- min(samples_cerrado[["latitude"]])
+lon_max <- max(samples_cerrado[["longitude"]])
+lon_min <- min(samples_cerrado[["longitude"]])
 
 # Define the roi for the LEM dataset
 roi_lem <- c(

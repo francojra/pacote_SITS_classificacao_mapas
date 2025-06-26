@@ -68,3 +68,6 @@ lem_cube <- sits_cube_copy(
 
 # Plot the cube 
 plot(lem_cube, palette = "RdYlGn")
+
+# Show the description of the data cube
+lem_cube

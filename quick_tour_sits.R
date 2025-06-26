@@ -28,7 +28,7 @@ setwd("C:/Users/jeann/AppData/Local/R/win-library/4.5/sitsdata/data")
 dir(samples_dir) # Apresenta os arquivos do diretório estabelecido
 
 # retrieve a data.frame with the samples
-samples_cerrado <- readRDS("samples_cerrado_lc8.rds")
+samples_cerrado <- readRDS("samples_matogrosso_modis.rds")
 samples_cerrado
 view(samples_cerrado)
 
@@ -71,3 +71,17 @@ plot(lem_cube, palette = "RdYlGn")
 
 # Show the description of the data cube
 lem_cube
+
+# Show information on the images files which are part of a data cube
+lem_cube$file_info[[1]]
+
+# Show the R object that describes the data cube
+sits_timeline(lem_cube)
+
+# The time series tibble -------------------------------------------------------------------------------------------------------------------
+
+# Retrieve the time series for each samples based on a data.frame
+samples_lem_time_series <- sits_get_data(
+    cube = bdc_cube,
+    samples = samples_cerrado
+)

@@ -65,6 +65,8 @@ lem_cube <- sits_cube_copy(
     output_dir = tempdir_r2
 )
 
+library(sf)
+
 # Plot the cube 
 plot(lem_cube, band = "NDVI", palette = "RdYlGn")
 

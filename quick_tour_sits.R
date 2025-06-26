@@ -63,7 +63,7 @@ bdc_cube <- sits_cube(
 lem_cube <- sits_cube_copy(
     cube = bdc_cube,
     roi = roi_lem,
-    output_dir = tempdir_r
+    output_dir = tempdir_r2
 )
 
 # Plot the cube 

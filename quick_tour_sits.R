@@ -30,6 +30,7 @@ dir(samples_dir) # Apresenta os arquivos do diretório estabelecido
 # retrieve a data.frame with the samples
 samples_matogrosso <- readRDS("samples_matogrosso_modis.rds")
 samples_matogrosso
+view(samples_matogrosso)
 
 # Creating a data cube based on the ground truth samples -----------------------------------------------------------------------------------
 

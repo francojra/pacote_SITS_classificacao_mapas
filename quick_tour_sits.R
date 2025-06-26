@@ -31,3 +31,26 @@ dir(samples_dir) # Apresenta os arquivos do diretório estabelecido
 samples_cerrado <- readRDS("samples_cerrado_lc8.rds")
 samples_cerrado
 view(samples_cerrado)
+
+# Find the the bounding box of the data
+lat_max <- max(df_samples_cerrado_lem[["latitude"]])
+lat_min <- min(df_samples_cerrado_lem[["latitude"]])
+lon_max <- max(df_samples_cerrado_lem[["longitude"]])
+lon_min <- min(df_samples_cerrado_lem[["longitude"]])
+
+# Define the roi for the LEM dataset
+roi_lem <- c(
+    "lat_max" = lat_max,
+    "lat_min" = lat_min,
+    "lon_max" = lon_max,
+    "lon_min" = lon_min)
+
+# Define a data cube in the BDC repository based on the LEM ROI
+bdc_cube <- sits_cube(
+    source = "BDC",
+    collection  = "CBERS-WFI-16D",
+    bands = c("NDVI", "EVI"),
+    roi = roi_lem,
+    start_date = "2019-09-30",
+    end_date = "2020-09-29"
+)

@@ -43,11 +43,18 @@ View(probs_cube)
 sits::samples_modis_ndvi
 data("samples_modis_ndvi")
 cube <- samples_modis_ndvi
+view(cube)
+
+# Treinar modelo
+model1 <- sits_train(
+  samples = cube,
+  ml_method = sits_rfor()  # Pode usar outros métodos
+)
 
 # 6. Classificação da imagem
 probs_cube <- sits_classify(
   data       = cube,
-  ml_model   = model,
+  ml_model   = model1,
   memsize    = 8,
   multicores = 2
 )

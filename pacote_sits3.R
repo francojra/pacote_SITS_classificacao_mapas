@@ -1,5 +1,4 @@
-
-# Earth observation data cubes -------------------------------------------------------------------------------------------------------------
+# Satellite Image Time Series Analysis on Earth Observation Data Cubes ---------------------------------------------------------------------
 # Autora do script: Jeanne Franco ----------------------------------------------------------------------------------------------------------
 # Data do script: 18/06/2025 ---------------------------------------------------------------------------------------------------------------
 # Referência: https://e-sensing.github.io/sitsbook/earth-observation-data-cubes.html -------------------------------------------------------
@@ -323,8 +322,8 @@ data_dir <- system.file("extdata/Planet", package = "sitsdata")
 planet_cube <- sits_cube(
   source = "PLANET",
   collection = "MOSAIC",
-  data_dir = data_dir,
-  roi = roi
+  data_dir = data_dir
+  #roi = roi
 )
 
 # Plot the first instance of the Planet data in natural colors
@@ -400,3 +399,21 @@ plot(s2_cube_teste,
      blue = "B02", date = "2018-07-04")
 
 sits_bbox(s2_cube_teste)
+
+install.packages("gdalcubes")
+library(gdalcubes)
+
+# Regularize the cube to 15 day intervals
+reg_cube_rondonia <- sits::sits_regularize(
+  cube       = s2_cube_rondonia,
+  output_dir = "arquivos_pacote_sits",
+  res        = 40,
+  period     = "P16D",
+  multicores = 6
+)
+
+# Plot the first image of the tile 20LLP of the regularized cube
+# The pixels of the regular data cube cover the full MGRS tile
+reg_cube_rondonia |>
+  dplyr::filter(tile == "20LLP") |>
+  plot(red = "B11", green = "B8A", blue = "B02")

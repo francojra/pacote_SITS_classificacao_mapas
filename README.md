@@ -1,4 +1,4 @@
-# Pacote SITS - Séries Temporais e Classificação de uso e Cobertura do Solo 
+se# Pacote SITS - Séries Temporais e Classificação de uso e Cobertura do Solo 
 
 #### Autoria do script: Jeanne Franco
 #### Data: 23/05/25
@@ -73,3 +73,4 @@ O resultado de sits_cube() é um tibble com uma descrição das imagens selecion
 - Espacial smoothing
 - Rotulando um cubo de dados de probabilidade
 - Exercícios
+- topicos 

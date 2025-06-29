@@ -73,4 +73,5 @@ O resultado de sits_cube() é um tibble com uma descrição das imagens selecion
 - Espacial smoothing
 - Rotulando um cubo de dados de probabilidade
 - Exercícios
-- topicos 
+
+## Outros scripts

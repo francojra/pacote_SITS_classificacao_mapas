@@ -26,12 +26,12 @@ O pacote *sits* usa imagens de séries temporais para classificação da terra u
 
 ![Usando séries temporais para classificação da terra (fonte: autores).](https://e-sensing.github.io/sitsbook/images/sits_general_view.png)
 
-O pacote fornece ferramentas para análises, visualização e classificação de imagens de satélite de séries temporais. Usuários seguem um típico fluxo de trabalho para uma classificação baseada em pixel:
+O pacote *sits* do R fornece ferramentas para análises, visualização e classificação de imagens de satélite de séries temporais. Os usuários seguem um típico fluxo de trabalho para uma classificação baseada em pixel:
 
-1. Selecionar um dado de coletação de imagem pronta para análise (ARD image collections) de provedores de nuvem como AWS, Microsoft Planetary Computer, Digital Earth Africa, Brazil Data Cube, etc. --> sits_cube()
+1. Selecionar um dado de coleção de imagem pronta para análise (ARD image collections) de provedores de nuvem como AWS, Microsoft Planetary Computer, Digital Earth Africa, Brazil Data Cube, etc. --> sits_cube()
 2. Construir um cubo de dados regular usando a coleção de imagem escolhida. --> sits_regularize()
 3. Obter novas bandas e índices com operações sobre o cubo de dados. --> sits_apply()
-4. Extrair amostras de séries temporais do cubo de dados para ser usado como dados de treinamento. --> sits_get_data()
+4. Extrair amostras de séries temporais do cubo de dados para ser usadas como dados de treinamento. --> sits_get_data()
 5. Executar o controle de qualidade e a filtragem nas amostras de séries temporais. 
 6. Treinar o modelo de machine learning usando as amostras de séries temporais. --> sits_train()
 7. Classificar os cubos de dados usando o modelo para obter as classes de probabilidades para cada pixel. --> sits_classify()

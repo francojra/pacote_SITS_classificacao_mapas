@@ -59,3 +59,36 @@ plot(ro_20LMR,
      blue = "B02",
      date = "2022-08-01", 
      scale = 1.0)
+
+# Plotting classified maps -----------------------------------------------------------------------------------------------------------------
+
+# Classified maps pose an additional challenge for plotting because 
+# of the association between labels and colors.
+
+# Create a cube based on a classified image 
+
+data_dir <- system.file("extdata/Rondonia-20LLP", 
+                        package = "sitsdata")
+
+# Read the classified cube
+
+rondonia_class_cube <- sits_cube(
+    source = "AWS",
+    collection = "SENTINEL-S2-L2A-COGS",
+    bands = "class",
+    labels = c("1" = "Burned", "2" = "Cleared", 
+               "3" = "Degraded", "4" =  "Natural_Forest"),
+    data_dir = data_dir
+)
+
+# Plot the classified cube
+
+plot(rondonia_class_cube,
+  legend = c("Burned" = "#a93226",
+             "Cleared" = "#f9e79f",
+             "Degraded" = "#d4efdf",
+             "Natural_Forest" = "#1e8449"
+             ),
+  scale = 1.0,
+  legend_position = "outside"
+)

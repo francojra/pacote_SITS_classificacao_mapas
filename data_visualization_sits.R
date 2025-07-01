@@ -21,11 +21,16 @@ dir.create(tempdir_visualization_sits, showWarnings = FALSE, recursive = TRUE)
 ## When plotting images and classified maps, users can control 
 ## the output, with appropriate parameters for each type of image.
 
-
 # set the directory where the data is 
 data_dir <- system.file("extdata/Rondonia-20LMR", package = "sitsdata")
 
-# read the data cube
+# Plotting false color maps ----------------------------------------------------------------------------------------------------------------
+
+# We refer to false color maps as images that are plotted on a 
+# color scale. Usually, these are single bands, indexes such as 
+# NDVI or DEMs. 
+
+  # read the data cube
 ro_20LMR <- sits_cube(
   source = "MPC", 
   collection = "SENTINEL-2-L2A",

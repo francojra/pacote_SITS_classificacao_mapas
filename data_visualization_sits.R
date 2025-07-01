@@ -92,3 +92,31 @@ plot(rondonia_class_cube,
   scale = 1.0,
   legend_position = "outside"
 )
+
+# Visualization of data cubes in interactive maps ------------------------------------------------------------------------------------------
+
+# Data cubes and samples can also be shown as interactive maps using 
+# sits_view(). This function creates tiled overlays of different 
+# kinds of data cubes, allowing comparison between the original, 
+# intermediate, and final results. It also includes background maps. 
+# The following example creates an interactive map combining the 
+# original data cube with the classified map.
+
+sits_view(rondonia_class_cube,
+            legend = c("Burned" = "#a93226",
+             "Cleared" = "#f9e79f",
+             "Degraded" = "#d4efdf",
+             "Natural_Forest" = "#1e8449"
+             )
+)
+
+# How colors work in sits -----------------------------------------------------------------------------------------------------------------
+
+# In the examples provided in the book, the color legend is taken 
+# from a predefined color palette provided by sits. The default color 
+# definition file used by sits includes 220 class names, which can 
+# be shown using sits_colors().
+
+# Point default `sits` colors
+
+sits_colors()

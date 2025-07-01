@@ -30,7 +30,8 @@ data_dir <- system.file("extdata/Rondonia-20LMR", package = "sitsdata")
 # color scale. Usually, these are single bands, indexes such as 
 # NDVI or DEMs. 
 
-  # read the data cube
+# read the data cube
+
 ro_20LMR <- sits_cube(
   source = "MPC", 
   collection = "SENTINEL-2-L2A",
@@ -38,9 +39,23 @@ ro_20LMR <- sits_cube(
 )
 
 # plot the NDVI for date 2022-08-01
+
 plot(ro_20LMR, 
      band = "NDVI", 
      date = "2022-08-01", 
      palette = "Greens",
      legend_position = "outside",
+     scale = 1.0)
+
+# Plotting RGB color composite maps --------------------------------------------------------------------------------------------------------
+
+# For RGB color composite maps.
+
+# plot a color composite for date 2022-08-01
+
+plot(ro_20LMR, 
+     red = "B11", 
+     green = "B8A",
+     blue = "B02",
+     date = "2022-08-01", 
      scale = 1.0)

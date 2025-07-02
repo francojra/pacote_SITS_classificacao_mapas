@@ -47,3 +47,25 @@ dir.create(tempdir_rondonia, recursive = TRUE)
 # following commands:
 
 # git clone https://github.com/e-sensing/rondonia20LMR.git
+
+# After cloning the repository, the local directory path can be 
+# used to proceed with the example. 
+
+# This path will serve as the reference location for accessing 
+# the dataset and continuing with the subsequent steps in the 
+# analysis workflow.
+
+# In the rondonia20LMR directory, the file deforestation_samples_v18.rds 
+# contains time series extracted from Sentinel-2 satellite images over 
+# tile 20LMR.
+
+# Samples path
+
+samples_path <- "rondonia20LMR/inst/extdata/samples/deforestation_samples_v18.rds"
+
+# Read the Cerrado samples
+
+deforestation_samples_v18 <- readRDS(samples_path)
+
+view(deforestation_samples_v18)
+

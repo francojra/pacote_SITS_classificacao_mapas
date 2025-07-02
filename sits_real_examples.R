@@ -38,3 +38,12 @@ dir.create(tempdir_cerrado_cube, recursive = TRUE)
 
 tempdir_rondonia <- paste0(tempdir_r, "/rondonia")
 dir.create(tempdir_rondonia, recursive = TRUE)
+
+# Classifying deforestation in Rondonia ----------------------------------------------------------------------------------------------------
+
+# To access the data, it is needed to clone the rondonia20LMR 
+# repository from the e-sensing GitHub repository into a local 
+# directory. To do this, open a terminal and execute the 
+# following commands:
+
+# git clone https://github.com/e-sensing/rondonia20LMR.git

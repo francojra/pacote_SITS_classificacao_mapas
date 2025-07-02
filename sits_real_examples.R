@@ -13,4 +13,25 @@
 
 # Configuration to run the examples in this chapter ----------------------------------------------------------------------------------------
 
+# load package "tibble"
+library(tibble)
+# load packages "sits" and "sitsdata"
+library(sits)
+library(sitsdata)
 
+# set tempdir if it does not exist
+
+tempdir_r <- "praticando-SITS"
+dir.create(tempdir_r, recursive = TRUE)
+
+# set tempdir for Cerrado if it does not exist
+
+tempdir_cerrado_cube <- paste0(tempdir_r, "/cerrado/cube")
+tempdir_cerrado <- paste0(tempdir_r, "/cerrado")
+dir.create(tempdir_cerrado, recursive = TRUE)
+dir.create(tempdir_cerrado_cube, recursive = TRUE)
+
+# set tempdir for Rondonia if it does not exist
+
+tempdir_rondonia <- paste0(tempdir_r, "/rondonia")
+dir.create(tempdir_rondonia, recursive = TRUE)

@@ -60,3 +60,4 @@ A função sits_cube() suporta acesso para coleções de imagens em serviços de
 - **end_date**: a data final para o intervalo temporal contendo as séries de tempo das imagens.
 
 O resultado de sits_cube() é um tibble com uma descrição das imagens selecionadas necessárias para processamento posterior. Ele não contém os dados reais, mas apenas ponteiros para as imagens. Os atributos de arquivos de imagem individuais podem ser acessados ​​listando a coluna file_info do tibble.
+gsvndjd

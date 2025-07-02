@@ -1,4 +1,4 @@
-se# Pacote SITS - Séries Temporais e Classificação de uso e Cobertura do Solo 
+Pacote SITS - Séries Temporais e Classificação de uso e Cobertura do Solo 
 
 #### Autoria do script: Jeanne Franco
 #### Data: 23/05/25

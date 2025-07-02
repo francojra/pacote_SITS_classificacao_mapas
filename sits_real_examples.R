@@ -21,10 +21,13 @@ library(sitsdata)
 
 # set tempdir if it does not exist
 
-tempdir_r <- "praticando-SITS"
+tempdir_r <- "praticando-SITS" # Cria nova pasta no diretório
 dir.create(tempdir_r, recursive = TRUE)
 
 # set tempdir for Cerrado if it does not exist
+
+## Cria duas novas pastas para Cerrado e Rondonia
+## dentro da nova pasta criada no diretório
 
 tempdir_cerrado_cube <- paste0(tempdir_r, "/cerrado/cube")
 tempdir_cerrado <- paste0(tempdir_r, "/cerrado")

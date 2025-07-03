@@ -69,3 +69,14 @@ deforestation_samples_v18 <- readRDS(samples_path)
 
 view(deforestation_samples_v18)
 
+# As shown in the previous example, the sits_patterns() function 
+# from the sits package allows the visualization of the temporal 
+# patterns of the classes. 
+
+# Generate the temporal patterns
+
+deforestation_samples_v18  |> 
+     sits_select(bands = c("B02", "B8A", "B11")) |> 
+     sits_patterns() |> 
+     plot()
+

@@ -80,3 +80,16 @@ deforestation_samples_v18  |>
      sits_patterns() |> 
      plot()
 
+# Build Data Cube and visualize band combination -------------------------------------------------------------------------------------------
+
+# Images path
+
+images_path <- "rondonia20LMR/inst/extdata/images/"
+
+# Access local data cube
+
+cube_20LMR <- sits_cube(
+     source = "MPC",
+     collection = "SENTINEL-2-L2A",
+     data_dir = images_path
+)

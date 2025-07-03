@@ -111,3 +111,18 @@ view(cube_20LMR$file_info[[1]])
 
 plot(cube_20LMR, red = "B04", 
      green = "B03", blue = "B02")
+
+# SITS provides the sits_select() function, which filters only 
+# the selected bands and dates from a set of time series or a 
+# data cube. As shown in the code below:
+
+# Select only bands B02, B8A and B11
+
+samples_3bands <- sits_select(
+        data = deforestation_samples_v18,
+        bands = c("B02", "B8A", "B11")
+)
+
+view(samples_3bands)
+
+view(samples_3bands$time_series[[1]])

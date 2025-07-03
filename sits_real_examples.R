@@ -110,5 +110,4 @@ view(cube_20LMR$file_info[[1]])
 # Plot one temporal instance
 
 plot(cube_20LMR, red = "B04", 
-     green = "B03", blue = "B02", 
-     date = "2022-08-17")
+     green = "B03", blue = "B02")

@@ -91,5 +91,21 @@ images_path <- "rondonia20LMR/inst/extdata/images/"
 cube_20LMR <- sits_cube(
      source = "MPC",
      collection = "SENTINEL-2-L2A",
-     data_dir = images_path
+     data_dir = images_path,
+
 )
+
+view(cube_20LMR)
+
+cube_20LMR$file_info[[1]]
+
+# The sits_cube() function creates the data cube cube_20LMR 
+# with the Sentinel-2 tile 20LMR images available in the 
+# repository. Each temporal instance includes the spectral 
+# bands B02, B03, B04, B05, B06, B07, B08, B8A, B11 and B12.
+
+# Plot one temporal instance
+
+plot(cube_20LMR, red = "B11", 
+     green = "B8A", blue = "B02", 
+     date = "2022-07-16")

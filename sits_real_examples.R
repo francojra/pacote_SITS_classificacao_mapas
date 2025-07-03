@@ -99,6 +99,8 @@ view(cube_20LMR)
 
 cube_20LMR$file_info[[1]]
 
+view(cube_20LMR$file_info[[1]])
+
 # The sits_cube() function creates the data cube cube_20LMR 
 # with the Sentinel-2 tile 20LMR images available in the 
 # repository. Each temporal instance includes the spectral 
@@ -106,6 +108,6 @@ cube_20LMR$file_info[[1]]
 
 # Plot one temporal instance
 
-plot(cube_20LMR, red = "B11", 
-     green = "B8A", blue = "B02", 
-     date = "2022-07-16")
+plot(cube_20LMR, red = "B04", 
+     green = "B03", blue = "B02", 
+     date = "2022-01-05")

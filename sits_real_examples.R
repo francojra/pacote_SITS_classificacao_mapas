@@ -92,7 +92,8 @@ cube_20LMR <- sits_cube(
      source = "MPC",
      collection = "SENTINEL-2-L2A",
      data_dir = images_path,
-
+     start_date = "2022-01-05",
+     end_date = "2022-11-05"
 )
 
 view(cube_20LMR)
@@ -110,4 +111,4 @@ view(cube_20LMR$file_info[[1]])
 
 plot(cube_20LMR, red = "B04", 
      green = "B03", blue = "B02", 
-     date = "2022-01-05")
+     date = "2022-08-17")

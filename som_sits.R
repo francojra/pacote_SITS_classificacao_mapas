@@ -21,7 +21,8 @@ dir.create(tempdir_r, showWarnings = FALSE)
 # como uma alternativa a clusterização hierárquica para controle de qualidade do treinamento
 # das amostras. O SOM é uma técnica de redução da dimensionalidade, onde dados de alta dimensão
 # são mapeados em um mapa de duas dimensões, mantendo as relações topológicas entre os padrões
-# de dados.
+# de dados. O mapa SOM em 2D é composto de unidades chamadas neurônios. Cada neurônio tem um
+# vetor de peso com a mesma dimensão das amostras de treinamento.
 
 
 

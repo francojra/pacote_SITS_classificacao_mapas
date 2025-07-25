@@ -23,7 +23,9 @@ dir.create(tempdir_r, showWarnings = FALSE)
 # são mapeados em um mapa de duas dimensões, mantendo as relações topológicas entre os padrões
 # de dados. O mapa SOM em 2D é composto de unidades chamadas neurônios. Cada neurônio tem um
 # vetor de peso com a mesma dimensão das amostras de treinamento. No início, os neurônios 
-# recebem um pequeno valor aleatório e depois são treinados por aprendizado competitivo.
+# recebem um pequeno valor aleatório e depois são treinados por aprendizado competitivo. O
+# algoritmo calcula as distâncias de cada membro do conjunto de treinamento para todos os
+# neurônios e encontra o neurônio mais próximo da entrada, chamado de melhor unidade correspondente.
 
 
 

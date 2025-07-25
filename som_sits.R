@@ -33,7 +33,11 @@ dir.create(tempdir_r, showWarnings = FALSE)
 # em um mapa SOM 2D, as unidades do mapa (chamadas neurônios) competem por cada amostra. Cada
 # série temporal irá ser mapeada para um dos neurônios. Como o número de neurônios é menor que
 # o número de classes, cada neurônio irá ser associado com muitas séries temporais. O resultado
-# do mapa 2D irá ser um conjunto de clusters. 
+# do mapa 2D irá ser um conjunto de clusters. Considerando que o SOM preserva a estrutura 
+# topológica de vizinhança em múltiplas dimensões, clusters que contêm amostras treinadas com
+# um dado rótulo geralmente serão vizinhos no espaço 2D. Os vizinhos de cada neurônio do mapa
+# SOM promove informação sobre a variabilidade interclasse e intraclasse, que é usada para
+# detectar ruídos das amostras. 
 
 
 

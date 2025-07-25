@@ -15,3 +15,20 @@ library(sitsdata)
 tempdir_r <- "ts_som"
 dir.create(tempdir_r, showWarnings = FALSE)
 
+# Introdução -------------------------------------------------------------------------------------------------------------------------------
+
+# O pacote sits promove uma técnica de clusterização baseada em self-organizing maps (SOM)
+# como uma alternativa a clusterização hierárquica para controle de qualidade do treinamento
+# das amostras.
+
+
+
+
+
+
+
+
+
+
+
+

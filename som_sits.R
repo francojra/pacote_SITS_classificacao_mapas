@@ -27,6 +27,18 @@ dir.create(tempdir_r, showWarnings = FALSE)
 # algoritmo calcula as distâncias de cada membro do conjunto de treinamento para todos os
 # neurônios e encontra o neurônio mais próximo da entrada, chamado de melhor unidade correspondente.
 
+# Os dados de entrada para avaliação da qualidade é um conjunto de amostras de treinamento, os
+# quais são dados de alta dimensionalidade; por exemplo, uma série temporal com 25 instâncias
+# de 4 bandas espectrais tem 100 dimensões. Ao projetar um conjunto de dados de alta dimensão 
+# em um mapa SOM 2D, as unidades do mapa (chamadas neurônios) competem por cada amostra. Cada
+# série temporal irá ser mapeada para um dos neurônios. Como o número de neurônios é menor que
+# o número de classes, cada neurônio irá ser associado com muitas séries temporais. O resultado
+# do mapa 2D irá ser um conjunto de clusters. 
+
+
+
+
+
 
 
 

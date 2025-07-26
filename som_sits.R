@@ -39,6 +39,15 @@ dir.create(tempdir_r, showWarnings = FALSE)
 # SOM promove informação sobre a variabilidade interclasse e intraclasse, que é usada para
 # detectar ruídos das amostras. 
 
+# Selecionar conjunto de dados e bandas ----------------------------------------------------------------------------------------------------
+
+# Take only the NDVI and EVI bands
+samples_cerrado_mod13q1_2bands <- sits_select(
+    data = samples_cerrado_mod13q1, 
+    bands = c("NDVI", "EVI"))
+
+# Show the summary of the samples
+summary(samples_cerrado_mod13q1_2bands)
 
 
 

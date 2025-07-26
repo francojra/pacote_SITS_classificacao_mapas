@@ -10,6 +10,8 @@
 library(tibble)
 library(sits)
 library(sitsdata)
+library(kohonen)
+
 
 # set tempdir if it does not exist 
 tempdir_r <- "ts_som"
@@ -55,10 +57,18 @@ summary(samples_cerrado_mod13q1_2bands)
 som_cluster <- sits_som_map(samples_cerrado_mod13q1_2bands,
     grid_xdim = 15,
     grid_ydim = 15,
-    alpha = 1.0,
-    distance = "dtw",
+    alpha = 1.0, # Taxa de aprendizagem inicial
+    distance = "dtw", # ou "euclidean"
     rlen = 20
 )
+
+# Sugerimos o uso da métrica de Distorção Temporal Dinâmica (“dtw”) como medida de di
+# stância. Trata-se de uma técnica utilizada para medir a similaridade entre duas sequências 
+# temporais que podem variar em velocidade ou tempo [4]. A ideia central da DTW é encontrar 
+# o alinhamento ideal entre duas sequências, permitindo o mapeamento não linear de uma sequência 
+# sobre a outra. Na análise de séries temporais, a DTW combina duas séries ligeiramente fora 
+# de sincronia. Essa propriedade é útil em estudos de uso do solo para combinar séries temporais 
+# de áreas agrícolas.
 
 # Plot the SOM map
 plot(som_cluster)

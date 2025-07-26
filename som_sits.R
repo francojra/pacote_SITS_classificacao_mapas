@@ -73,7 +73,12 @@ som_cluster <- sits_som_map(samples_cerrado_mod13q1_2bands,
 # Plot the SOM map
 plot(som_cluster)
 
-
+# A grade SOM mostra que a maioria das classes está associada a neurônios próximos umas das outras, 
+# embora haja exceções. Alguns neurônios de Pastagem estão distantes do cluster principal porque 
+# a transição entre áreas de savana aberta e pastagem nem sempre é bem definida e depende do clima 
+# e da latitude. Além disso, os neurônios associados a Soy_Fallow estão dispersos no mapa, indicando 
+# possíveis problemas na distinção desta classe das demais classes agrícolas. O mapa SOM pode ser 
+# usado para remover outliers, como mostrado abaixo.
 
 
 

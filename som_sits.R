@@ -7,12 +7,13 @@
 
 # Configurations to run this chapter -------------------------------------------------------------------------------------------------------
 
-library(tibble)
-library(sits)
-library(sitsdata)
-library(kohonen)
+library(tibble) # Pacote para exibir dados em formato tibble
+library(sits) # Pacote para executar as funções do sits
+library(sitsdata) # Pacote para vissualizar séries temporais de amostras
+library(kohonen) # Pacote para executar o mapa SOM
 
-# set tempdir if it does not exist 
+# Estabelecer um diretório, caso ele não exista
+
 tempdir_r <- "ts_som"
 dir.create(tempdir_r, showWarnings = FALSE)
 
@@ -42,12 +43,14 @@ dir.create(tempdir_r, showWarnings = FALSE)
 
 # Selecionar conjunto de dados e bandas ----------------------------------------------------------------------------------------------------
 
-# Take only the NDVI and EVI bands
+# Extraindo apenas as bandas NDVI e EVI
+
 samples_cerrado_mod13q1_2bands <- sits_select(
     data = samples_cerrado_mod13q1, 
     bands = c("NDVI", "EVI"))
 
-# Show the summary of the samples
+# Mostrar o resumo das amostras
+
 summary(samples_cerrado_mod13q1_2bands)
 
 # Criando o mapa SOM -----------------------------------------------------------------------------------------------------------------------
@@ -84,6 +87,9 @@ plot(som_cluster)
 # e da latitude. Além disso, os neurônios associados a Soy_Fallow estão dispersos no mapa, indicando 
 # possíveis problemas na distinção desta classe das demais classes agrícolas. O mapa SOM pode ser 
 # usado para remover outliers, como mostrado abaixo.
+
+# Medindo a confusão entre rótulos usando o SOM --------------------------------------------------------------------------------------------
+
 
 
 

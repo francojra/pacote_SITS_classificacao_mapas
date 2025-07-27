@@ -117,7 +117,7 @@ som_eval <- sits_som_evaluate_cluster(som_cluster)
 
 # Mostrar o resultado
 
-som_eval 
+print(som_eval, n = 81) 
 
 
 

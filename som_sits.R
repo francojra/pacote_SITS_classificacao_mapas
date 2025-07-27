@@ -63,11 +63,17 @@ som_cluster <- sits_som_map(samples_cerrado_mod13q1_2bands,
 
 # Sugerimos o uso da métrica de Distorção Temporal Dinâmica (“dtw”) como medida de di
 # stância. Trata-se de uma técnica utilizada para medir a similaridade entre duas sequências 
-# temporais que podem variar em velocidade ou tempo [4]. A ideia central da DTW é encontrar 
+# temporais que podem variar em velocidade ou tempo. A ideia central da DTW é encontrar 
 # o alinhamento ideal entre duas sequências, permitindo o mapeamento não linear de uma sequência 
 # sobre a outra. Na análise de séries temporais, a DTW combina duas séries ligeiramente fora 
 # de sincronia. Essa propriedade é útil em estudos de uso do solo para combinar séries temporais 
 # de áreas agrícolas.
+
+# Resultados do sits_som_map(): a) conjunto original de dados com duas adicionais colunas para cada
+# série de tempo: id_sample (o original id de cada amostra) e id_neuron (o id do neurônio a qual
+# ele pertence). O b) labelled_neurons, um tibble com informações sobre os neurônios. Para cada neurônio
+# ele informa as probabilidades a priori e posteriori de todos os rótulos que ocorrem nas amostras;
+# e c) o SOM grid. Os neurônios são rotulados por votação majoritária.
 
 # Plot the SOM map
 plot(som_cluster)

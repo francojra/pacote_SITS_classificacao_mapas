@@ -126,8 +126,17 @@ print(som_eval, n = 81)
 # correspondência entre os locais rotulados em imagens de alta resolução e imagens de média a baixa 
 # resolução não é direta.
 
+# A confusão por rótulo de amostra pode ser visualizada em um gráfico de barras usando plot(), 
+# como mostrado abaixo. O gráfico de barras mostra alguma confusão entre os rótulos associados à 
+# vegetação natural típica do Cerrado brasileiro (Savana, Parque de Savana, Savana Rochosa).
 
+graf <- plot(som_eval) 
 
+library(ggplot2)
+
+ggplot(som_eval, aes(x = mixture_percentage, y = class, fill = cluster)) +
+  geom_col(position = "fill") +
+  scale_fill_brewer(type = "div", palette = "Paired") 
 
 
 

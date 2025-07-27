@@ -12,7 +12,6 @@ library(sits)
 library(sitsdata)
 library(kohonen)
 
-
 # set tempdir if it does not exist 
 tempdir_r <- "ts_som"
 dir.create(tempdir_r, showWarnings = FALSE)
@@ -55,11 +54,11 @@ summary(samples_cerrado_mod13q1_2bands)
 
 # Clustering time series using SOM
 som_cluster <- sits_som_map(samples_cerrado_mod13q1_2bands,
-    grid_xdim = 15,
-    grid_ydim = 15,
+    grid_xdim = 15, # Tamanho da grade no eixo x
+    grid_ydim = 15, # Tamanho da grade no eixo y
     alpha = 1.0, # Taxa de aprendizagem inicial
-    distance = "dtw", # ou "euclidean"
-    rlen = 20
+    distance = "dtw", # ou "euclidean", mede a similaridade entre sequências temporais
+    rlen = 20 # Número de iterações
 )
 
 # Sugerimos o uso da métrica de Distorção Temporal Dinâmica (“dtw”) como medida de di

@@ -227,3 +227,25 @@ new_cluster_mixture <- sits_som_evaluate_cluster(new_cluster)
 # Plotar a informação da confusão
 
 plot(new_cluster_mixture)
+
+# Como esperado, o novo mapa de confusão mostra uma melhoria significativa em relação ao 
+# anterior. Este resultado deve ser interpretado com cautela, pois pode ser devido a efeitos 
+# diferentes. A interpretação mais direta é que Millet_Cotton e Silvicultura não podem ser 
+# facilmente separadas das outras classes, dados os atributos atuais (uma série temporal de 
+# índices NDVI e EVI de imagens MODIS). Em tais situações, os usuários devem considerar 
+# aumentar o número de amostras das classes menos representadas, incluindo mais bandas MODIS 
+# ou trabalhando com satélites de maior resolução. Os resultados do método SOM devem ser 
+# interpretados com base na compreensão dos usuários sobre os ecossistemas e práticas agrícolas 
+# da região de estudo.
+
+# A análise baseada em SOM descarta amostras que podem ser confundidas com amostras de outras 
+# classes. Após a remoção de amostras ruidosas ou classes incertas, o conjunto de dados obtém uma 
+# pontuação de validação melhor, pois há menos confusão entre as classes. Os usuários devem 
+# analisar os resultados com cuidado. Nem todas as amostras descartadas são de baixa qualidade. 
+# A confusão entre amostras de diferentes classes pode resultar de rotulagem inconsistente ou 
+# da falta de capacidade dos dados de satélite para distinguir entre as classes escolhidas. 
+# Quando muitas amostras são descartadas, como no exemplo atual, é aconselhável revisar todo o 
+# esquema de classificação. O objetivo da seleção de dados de treinamento deve ser sempre 
+# corresponder à realidade em campo com o poder dos dados de sensoriamento remoto para 
+# identificar diferenças. Nenhum procedimento de análise pode substituir a experiência real 
+# do usuário e o conhecimento da região de estudo.

@@ -166,3 +166,64 @@ view(som_cluster$labelled_neurons)
 # os neurônios vizinhos tiverem Floresta como rótulo majoritário? Para responder a essa pergunta, 
 # usamos inferência bayesiana para estimar se essas amostras são ruidosas com base nos neurônios 
 # circundantes.
+
+# Para identificar amostras com ruído, tomamos o resultado da função sits_som_map() como o 
+# primeiro argumento da função sits_som_clean_samples(). Esta função descobre quais amostras 
+# são com ruído, quais são limpas e quais precisam ser examinadas mais detalhadamente pelo usuário. 
+# Ela requer os parâmetros prior_threshold e posterior_threshold.
+
+# Se a probabilidade anterior de uma amostra for menor que prior_threshold, a amostra será 
+# considerada ruidosa e marcada como “remove”;
+
+# Se a probabilidade anterior for maior ou igual a prior_threshold e a probabilidade posterior 
+# calculada por inferência bayesiana for menor ou igual a posterior_threshold, a amostra será 
+# considerada não ruidosa e, portanto, marcada como “clean”
+
+# O valor padrão para prior_threshold e posterior_threshold é 60%. Primeiro, mostramos a 
+# distribuição completa das amostras e, posteriormente, removemos as amostras com ruído.
+
+all_samples <- sits_som_clean_samples(
+    som_map = som_cluster, 
+    prior_threshold = 0.6,
+    posterior_threshold = 0.6,
+    keep = c("clean", "analyze", "remove"))
+
+plot(all_samples)
+
+view(all_samples)
+
+# Removendo o ruído das amostras -----------------------------------------------------------------------------------------------------------
+
+# Agora removemos as amostras ruidosas para melhorar a qualidade do conjunto de treinamento.
+# Amostras com tag "remove" são retiradas, restando as amostras para analisar e limpas.
+
+new_samples <- sits_som_clean_samples(
+    som_map = som_cluster, 
+    prior_threshold = 0.6,
+    posterior_threshold = 0.6,
+    keep = c("clean", "analyze"))
+
+summary(new_samples)
+
+plot(new_samples)
+
+# Uma análise mais aprofundada inclui o cálculo do mapa SOM e da matriz de confusão para o 
+# novo conjunto, conforme mostrado no exemplo a seguir.
+
+# Produzir o novo mapa SOM com as amostras limpas
+
+new_cluster <- sits_som_map(
+   data = new_samples,
+   grid_xdim = 15,
+   grid_ydim = 15,
+   alpha = 1.0,
+   rlen = 20,
+   distance = "dtw")
+
+# Avaliar a confusão do novo SOM cluster
+
+new_cluster_mixture <- sits_som_evaluate_cluster(new_cluster)
+
+# Plotar a informação da confusão
+
+plot(new_cluster_mixture)

@@ -64,6 +64,19 @@ som_cluster <- sits_som_map(samples_cerrado_mod13q1_2bands,
     rlen = 20 # Número de iterações
 )
 
+view(som_cluster$data)
+view(som_cluster$labelled_neurons)
+
+# Salvar tabela do SOM ---------------------------------------------------------------------------------------------------------------------
+
+class(som_cluster$data)
+
+tab_som_cluster <- som_cluster$data
+
+saveRDS(tab_som_cluster, "tab_som_cluster.rds")
+tab <- readRDS("tab_som_cluster.rds")
+view(tab)
+
 # Sugerimos o uso da métrica de Distorção Temporal Dinâmica (“dtw”) como medida de di
 # stância. Trata-se de uma técnica utilizada para medir a similaridade entre duas sequências 
 # temporais que podem variar em velocidade ou tempo. A ideia central da DTW é encontrar 

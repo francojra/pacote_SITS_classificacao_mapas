@@ -90,8 +90,12 @@ plot(som_cluster)
 
 # Medindo a confusão entre rótulos usando o SOM --------------------------------------------------------------------------------------------
 
-
-
+# O segundo passo na avaliação de qualidade baseada em SOM é entender a confusão entre rótulos.
+# A função sits_som_evaluate_cluster() agrupa neurônios por seu rótulo majoritário e produz um tibble. 
+# Os neurônios são agrupados em clusters, e haverá tantos clusters quantos forem os rótulos.
+# Os resultados mostram a porcentagem de amostras de cada rótulo em cada cluster. Idealmente, 
+# todas as amostras de cada cluster teriam o mesmo rótulo. Na prática, os clusters contêm amostras 
+# com rótulos diferentes. Essa informação ajuda a medir a confusão entre as amostras.
 
 
 

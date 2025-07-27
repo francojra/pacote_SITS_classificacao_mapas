@@ -144,4 +144,25 @@ ggplot(som_eval, aes(x = mixture_percentage, y = class, fill = cluster)) +
 # particularmente difícil, visto que muitas das amostras atribuídas a esta classe são 
 # confundidas com Soy_Cotton e Millet_Cotton.
 
+# Detectando o ruído das amostras usando SOM -----------------------------------------------------------------------------------------------
 
+# A terceira etapa na avaliação da qualidade usa a distribuição de probabilidade discreta 
+# associada a cada neurônio, que está incluída no tibble labeled_neurons produzido por 
+# sits_som_map().
+
+view(som_cluster$labelled_neurons)
+
+#  O algoritmo calcula dois valores para cada amostra:
+
+# - Probabilidade a priori: a probabilidade de que o rótulo atribuído à amostra esteja correto, 
+# considerando a frequência de amostras no mesmo neurônio. Por exemplo, se um neurônio possui 
+# 20 amostras, das quais 15 são rotuladas como Pasto e 5 como Floresta, todas as amostras 
+# rotuladas como Floresta recebem uma probabilidade a priori de 25%. Isso indica que as amostras 
+# de Floresta nesse neurônio podem não ser de boa qualidade.
+
+# - Probabilidade posterior: a probabilidade de que o rótulo atribuído à amostra esteja correto,
+# considerando os neurônios vizinhos. Considere o caso do neurônio mencionado acima, cujas 
+# amostras rotuladas como Pasto têm uma probabilidade anterior de 75%. O que acontece se todos 
+# os neurônios vizinhos tiverem Floresta como rótulo majoritário? Para responder a essa pergunta, 
+# usamos inferência bayesiana para estimar se essas amostras são ruidosas com base nos neurônios 
+# circundantes.

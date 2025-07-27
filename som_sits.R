@@ -190,6 +190,8 @@ all_samples <- sits_som_clean_samples(
 
 plot(all_samples)
 
+summary(all_samples)
+
 view(all_samples)
 
 # Removendo o ruído das amostras -----------------------------------------------------------------------------------------------------------

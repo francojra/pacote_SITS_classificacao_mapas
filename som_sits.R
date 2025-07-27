@@ -119,6 +119,12 @@ som_eval <- sits_som_evaluate_cluster(som_cluster)
 
 print(som_eval, n = 81) 
 
+# Muitos rótulos estão associados a clusters onde há algumas amostras com rótulos diferentes. 
+# Essa confusão entre rótulos surge porque a rotulagem de amostras é subjetiva e pode ser tendenciosa. 
+# Em muitos casos, os intérpretes usam dados de alta resolução para identificar amostras.
+# Em nosso estudo de caso, uma imagem MOD13Q1 possui pixels com resolução de 250 m. Portanto, a 
+# correspondência entre os locais rotulados em imagens de alta resolução e imagens de média a baixa 
+# resolução não é direta.
 
 
 

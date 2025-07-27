@@ -138,6 +138,10 @@ ggplot(som_eval, aes(x = mixture_percentage, y = class, fill = cluster)) +
   geom_col(position = "fill") +
   scale_fill_brewer(type = "div", palette = "Paired") 
 
-
+# Essa mistura se deve à grande variabilidade da vegetação natural do bioma Cerrado, 
+# o que dificulta o traçado de limites nítidos entre as classes.
+# Também é visível alguma confusão entre as classes agrícolas. A classe Fallow_Cotton é 
+# particularmente difícil, visto que muitas das amostras atribuídas a esta classe são 
+# confundidas com Soy_Cotton e Millet_Cotton.
 
 

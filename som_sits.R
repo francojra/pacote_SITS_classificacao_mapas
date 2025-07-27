@@ -1,6 +1,6 @@
 # Satellite Image Time Series Analysis on Earth Observation Data Cubes ---------------------------------------------------------------------
 # Autora do script: Jeanne Franco ----------------------------------------------------------------------------------------------------------
-# Data do script: 24/06/2025 ---------------------------------------------------------------------------------------------------------------
+# Data do script: 25/07/2025 ---------------------------------------------------------------------------------------------------------------
 # Referência: https://e-sensing.github.io/sitsbook/ ----------------------------------------------------------------------------------------
 
 #  Self-organized maps for sample quality control - Capítulo 14 ----------------------------------------------------------------------------
@@ -91,7 +91,8 @@ view(tab)
 # ele informa as probabilidades a priori e posteriori de todos os rótulos que ocorrem nas amostras;
 # e c) o SOM grid. Os neurônios são rotulados por votação majoritária.
 
-# Plot the SOM map
+# Plotar o mapa SOM 
+
 plot(som_cluster)
 
 # A grade SOM mostra que a maioria das classes está associada a neurônios próximos umas das outras, 
@@ -110,7 +111,13 @@ plot(som_cluster)
 # todas as amostras de cada cluster teriam o mesmo rótulo. Na prática, os clusters contêm amostras 
 # com rótulos diferentes. Essa informação ajuda a medir a confusão entre as amostras.
 
+# Produzir uma tibble com o resumo da mistura dos rótulos
 
+som_eval <- sits_som_evaluate_cluster(som_cluster)
+
+# Mostrar o resultado
+
+som_eval 
 
 
 

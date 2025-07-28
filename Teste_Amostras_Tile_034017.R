@@ -69,6 +69,17 @@ bandas_indices_tile_034017 <- sits_select(data = cubo_caatinga_bandas_indices,
 
 sits_bands(bandas_indices_tile_034017)
 
+## As bandas selecionadas correspondem àquelas que apresentaram melhor desempenho de classificação
+## no modelo Random Forest, com adição da banda NDVI.
+
 # Cubo com amostras da máscara -------------------------------------------------------------------------------------------------------------
 
+cubo_samples_tile_034017 <- sits_get_data(
+  bandas_indices_tile_034017, # Cubo geral criado acima para o tile 034018
+  samples = "Tile_034018_amostras_diretas_raster.shp", # Arquivo shapefile da pasta do diretório de trabalho
+  label_attr = "Classe", # Coluna que indica as classes das amostras (pontos)
+  multicores = 4,
+  progress = TRUE) # Acompanhar carregamento
 
+## Esse cubo foi criado com amostras da máscara que pertencem ao tile vizinho 034018.
+## As amostras são de supressão da vegetação e áreas vegetadas.
